@@ -1,13 +1,7 @@
 # Web-App-2
 
-Homepage
+Homepage - Completed by: Braydon Viragh
 
-Completed by: Braydon Viragh
+About Us - Completed by: Sasha Srinivas
 
-About Us
-
-Completed by: Sasha Srinivas
-
-Admin interface
-
-Completed by: Ikumi Mine
+Admin interface - Completed by: Ikumi Mine
