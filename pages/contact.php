@@ -53,7 +53,7 @@
 					<label id="contact-form-req"><span>*</span> indicates a required field.</label>
 					<div class="form-group">
 	    				<label for="firstname">firstname<span>*</span></label>
-	   					<input type="text" class="form-control" id="firstname" name="firstname">
+	   					<input type="text" class="form-control" id="firstname" name="firstname" required>
 	  				</div>
 
 	  				<div class="form-group">
@@ -63,17 +63,17 @@
 
 					<div class="form-group">
 	    				<label for="email">Email<span>*</span></label>
-	   					<input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+	   					<input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
 	  				</div>
 
 	  				<div class="form-group">
 	    				<label for="phone">phone<span>*</span></label>
-	   					<input type="tel" class="form-control"  id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+	   					<input type="tel" class="form-control"  id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
 	  				</div>
 
 	  				<div class="form-group">
 	    				<label for="comment">Your message<span>*</span></label>
-	   					<textarea class="form-control" id="comment" name="comment"></textarea> 
+	   					<textarea class="form-control" id="comment" name="comment" required></textarea> 
 	  				</div>
 	  				<button type="submit" class="btn btn-dark btn-lg">Send</button>
 				</form>
