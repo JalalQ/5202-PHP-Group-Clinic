@@ -6,3 +6,6 @@ Completed by: Braydon Viragh
 About Us
 Completed by: Sasha Srinivas
 
+Admin interface
+
+Completed by: Ikumi Mine
