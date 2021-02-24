@@ -1,22 +1,4 @@
-<?php
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>PHP Query Crew - Health Clinic</title>
-	
-	<!-- Bootstrap 4.5 CSS -->
-	<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-	<!-- Style CSS -->
-	<link rel="stylesheet" href="css/style.css">
-    <!-- Style FOR HEADER AND FOOTER -->
-    <link rel="stylesheet" href="css/HeaderFooter.css">
 
-
-</head>
 <header>
      <!--Navbar -->
      <nav class="navbar navbar-expand-lg navbar-dark cyan">
@@ -28,7 +10,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link active" href="#"><i class="fa fa-envelope"></i> Contact </a>
+                            <a class="nav-link active" href="pages/contact.php"><i class="fa fa-envelope"></i> Contact </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#"><i class="fa fa-cogs"></i> Features</a>

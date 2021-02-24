@@ -1,5 +1,4 @@
 
-<body>
 
 <!-- Top Bar -->
 <div class="top-bar">
@@ -24,7 +23,7 @@
     <!-- Carousel Content -->
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="img/carousel/1.jpg" alt="picture1" class="w-100">
+            <img src="img/HOME-PAGE/carousel/1.jpg" alt="picture1" class="w-100">
             <div class="carousel-caption">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -40,7 +39,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="img/carousel/2.jpg" alt="" class="w-100">
+            <img src="img/HOME-PAGE/carousel/2.jpg" alt="" class="w-100">
             <div class="carousel-caption">
                 <div class="container">
                     <div class="row justify-content-end text-right">
@@ -53,7 +52,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="img/carousel/3.jpg" alt="image3" class="w-100">
+            <img src="img/HOME-PAGE/carousel/3.jpg" alt="image3" class="w-100">
             <div class="carousel-caption">
                 <div class="container">
                     <div class="row justify-content-start text-left">
@@ -98,7 +97,7 @@
     <div class="row justify-content-start align-items-center">
         <div class="col-lg-6 justify-content-center align-items-center d-flex">
             <div class="overlay overlay-bg"></div>
-            <img src="img/active2.jpg" alt="">
+            <img src="img/HOME-PAGE/active2.jpg" alt="">
         </div>						
         <div class="col-lg-6">
             <h6>Building stronger, happier & healthy lifestyles </h6>
@@ -107,7 +106,7 @@
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
             </p>
-            <img class="img-fluid" src="img/signature.png" alt="">
+            <img class="img-fluid" src="img/HOME-PAGE/signature.png" alt="">
         </div>
     </div>
 </div>	
@@ -243,7 +242,7 @@
         <a href="#" class="btn btn-outline-dark btn-lg">Return to Top</a>
     </div>
     <div class="col lg-8">
-        <img src="img/active1.jpg" alt="" class="w-75"></div>
+        <img src="img/HOME-PAGE/active1.jpg" alt="" class="w-75"></div>
 
     </div>
 </div>
