@@ -9,7 +9,7 @@
 		<title>PHP Query Crew - Health Clinic</title>
 		
 		<!-- Bootstrap 4.5 CSS -->
-		<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="library/bootstrap/bootstrap.min.css">
 		<!-- Style CSS -->
 		<link rel="stylesheet" href="css/style.css">
 	    <!-- Style FOR HEADER AND FOOTER -->
@@ -21,9 +21,9 @@
 	<body>
 		<?php
 
-			include_once 'pages/header.php';
-			include_once  'pages/body.php';
-			include_once 'pages/footer.php';
+			include_once 'header.php';
+			include_once  'body.php';
+			include_once 'footer.php';
 
 	    ?>
 
