@@ -9,16 +9,10 @@
 		
 		<!-- Bootstrap 4.5 CSS -->
 		<link rel="stylesheet" href="library/bootstrap/bootstrap.min.css">
-		<!-- Style CSS -->
-		<link rel="stylesheet" href="css/style.css">		
 	    <!-- Style FOR HEADER AND FOOTER -->
 	    <link rel="stylesheet" href="css/HeaderFooter.css">
-
-	    <!--Icons-->
-	    <link href="css/admin-style/css/icons/css/fontawesome.css" rel="stylesheet">
-	    <link href="css/admin-style/css/brands.css" rel="stylesheet">
-	    <link href="css/admin-style/css/solid.css" rel="stylesheet">   
-
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="css/admin-style/admin_dashboard.css">
 
 	</head>
 
@@ -33,7 +27,7 @@
         <div class="container-fluid">
 
             <!--DROPDOWN MENU-->
-            <div class="dropdown position-fixed">
+            <div class="dropdown dropleft position-fixed">
                 <button class="btn btn-secondary" type="button" id="btn-toggle">
                     Menu
                 </button>
@@ -42,7 +36,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">
                                 <div class="d-flex justify-content-start">
-                                    <i class="fas fa-home icons"></i>
+                                    <i class="fas fa-home fa-fw mt-1 mr-1"></i>
                                     <p>Dashboard</p>
                                 </div>
                             </a>
@@ -50,7 +44,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">
                                 <div class="d-flex justify-content-start">
-                                    <i class="fas fa-user icons"></i>
+                                    <i class="fas fa-user fa-fw mt-1 mr-1"></i>
                                     <p>Administrators</p>
                                 </div>
                             </a>
@@ -58,7 +52,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <div class="d-flex justify-content-start">
-                                    <i class="fas fa-hospital-user icons"></i>
+                                    <i class="fas fa-hospital-user fa-fw mt-1 mr-1"></i>
                                     <p>Patients</p>
                                 </div>
                             </a>
@@ -66,7 +60,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <div class="d-flex justify-content-start">
-                                    <i class="fas fa-user-md icons"></i>
+                                    <i class="fas fa-user-md fa-fw mt-1 mr-1"></i>
                                     <p>Doctors</p>
                                 </div>
                             </a>
@@ -74,7 +68,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <div class="d-flex justify-content-start">
-                                    <i class="fas fa-calendar-check icons"></i>
+                                    <i class="fas fa-calendar-check fa-fw mt-1 mr-1"></i>
                                     <p>Appointments</p>
                                 </div>
                             </a>
@@ -82,7 +76,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <div class="d-flex justify-content-start">
-                                    <i class="fas fa-hands-helping icons"></i>
+                                    <i class="fas fa-hands-helping fa-fw mt-1 mr-1"></i>
                                     <p>Helpdesk</p>
                                 </div>
                             </a>
@@ -122,7 +116,7 @@
 
             <!--APPOINTMENTS-->
             <section class="card my-4 shadow-sm" id="section_appointment">
-                <h2 class="mt-3 ms-3">Appointments</h2>
+                <h2 class="my-3 ml-3">Appointments</h2>
                 <a href="#" class="nav-link mb-2 detail-links" >Check more</a>
                 <div class="container-fluid">
                     <div class="calendar mb-3"><!--table will be generated using PHP-->
@@ -193,7 +187,7 @@
 
             <!--HELPDESK-->
             <section class="card mb-5 shadow-sm" id="section_helpdesk">
-                <h2 class="mt-3 ms-3">Helpdesk</h2>
+                <h2 class="my-3 ml-3">Helpdesk</h2>
                 <a href="#" class="nav-link mb-2 detail-links">Check more</a>
                 <div class="container-fluid pb-3"><!--Data will be retrieved from database using PHP-->
                     <div class="list-group gap-2">
@@ -227,7 +221,7 @@
                 <li class="nav-item">
                     <a class="nav-link active sidebar_item" aria-current="page" href="#">
                         <div class="d-flex justify-content-start">
-                            <i class="fas fa-home icons"></i>
+                            <i class="fas fa-home fa-fw mr-1 icons"></i>
                             <p>Dashboard</p>
                         </div>
                     </a>
@@ -235,7 +229,7 @@
                 <li class="nav-item">
                     <a class="nav-link active sidebar_item" aria-current="page" href="#">
                         <div class="d-flex justify-content-start">
-                            <i class="fas fa-user icons"></i>
+                            <i class="fas fa-user fa-fw mr-1 icons"></i>
                             <p>Administrators</p>
                         </div>
                     </a>
@@ -243,7 +237,7 @@
                 <li class="nav-item">
                     <a class="nav-link sidebar_item" href="#">
                         <div class="d-flex justify-content-start">
-                            <i class="fas fa-hospital-user icons"></i>
+                            <i class="fas fa-hospital-user fa-fw mr-1 icons"></i>
                             <p>Patients</p>
                         </div>
                     </a>
@@ -251,7 +245,7 @@
                 <li class="nav-item">
                     <a class="nav-link sidebar_item" href="#">
                         <div class="d-flex justify-content-start">
-                            <i class="fas fa-user-md icons"></i>
+                            <i class="fas fa-user-md fa-fw mr-1 icons"></i>
                             <p>Doctors</p>
                         </div>
                     </a>
@@ -259,7 +253,7 @@
                 <li class="nav-item">
                     <a class="nav-link sidebar_item" href="#">
                         <div class="d-flex justify-content-start">
-                            <i class="fas fa-calendar-check icons"></i>
+                            <i class="fas fa-calendar-check fa-fw mr-1 icons"></i>
                             <p>Appointments</p>
                         </div>
                     </a>
@@ -267,7 +261,7 @@
                 <li class="nav-item">
                     <a class="nav-link sidebar_item" href="#">
                         <div class="d-flex justify-content-start">
-                            <i class="fas fa-hands-helping icons"></i>
+                            <i class="fas fa-hands-helping fa-fw mr-1 icons"></i>
                             <p>Helpdesk</p>
                         </div>
                     </a>
@@ -295,7 +289,7 @@
 		<!-- Font Awesome -->
 		<script src="js/all.min.js"></script>
 		<!--CUSTOM JS-->
-        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/admin_dashboard.js"></script>
 
 		<!-- End Script Source Files -->
 

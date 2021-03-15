@@ -23,19 +23,10 @@ main {
 .detail-links:active {
     color: #a7c5eb;
 }
-/* CUSTOMIZE HEADER */
-header {
-    height: 52px;
-}
-.logo {
-    font-size: 16px;
-    border: 2px white solid;
-    margin-left: 10px;
-}
 /* TOGGLE MENU */
 .dropdown {
     display: none;
-    top: 18%;
+    top: 23%;
     right: 5%;
     z-index: 100;
 }
@@ -44,7 +35,7 @@ header {
     background-color: #413c69;
 }
 #toggle-menu-item {
-    right: 0;
+    right: 67px;
 }
 /* TOGGLE CLASS */
 .show {
@@ -54,9 +45,6 @@ header {
 .sidebar_sticky {
     background-color: rgba(112,159,176,.1);
     box-shadow: 2px 0 1px -2px #413c69;
-    /*
-    background-color: #f6f5f5;
-    color: #413c69;*/
 }
 .sidebar_item:link,
 .sidebar_item:visited {
@@ -68,7 +56,6 @@ header {
 }
 .icons {
     font-size: 1.25rem;
-    width: 35px;
 }
 /* 3 COLUMNS */
 #card_col-3 {
@@ -162,6 +149,6 @@ header {
 }
 @media only screen and (max-width: 426px) {
     .dropdown {
-        top: 16%;
+        top: 28%;
     }
 }
