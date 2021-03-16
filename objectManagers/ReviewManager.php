@@ -1,5 +1,5 @@
 <?php
-namespace WebApp2\managers;
+namespace WebApp2\ObjectManagers;
 
 require_once "../vendor/autoload.php";
 
@@ -13,16 +13,17 @@ Class ReviewManager{
 	public function send_invitation($user)
 	{
 		// Create the Transport
-		$transport = new \Swift_SmtpTransport('smtp.gmail.com', 587,'tls');
-		$transport->setUsername('frankyves90@gmail.com');
-		$transport->setPassword('KATAgourouma@2021');
+		$transport = new \Swift_SmtpTransport(' smtp.mail.yahoo.com
+', 587,'tls');
+		$transport->setUsername('webbapp2@yahoo.com');
+		$transport->setPassword('team@2021');
 
 		// Create the Mailer using your created Transport
 		$mailer = new \Swift_Mailer($transport);
 
 		// Create a message
 		$message = new \Swift_Message('Invitation to share your experience');
-		$message ->setFrom(['frankyves90@gmail.com' => 'QC/HR']);
+		$message ->setFrom(['webbapp2@yahoo.com' => 'QC/HR']);
 		$message ->setTo(['franckyves78@yahoo.fr' => 'franckyves78']);
 		$type = $message->getHeaders()->get('Content-Type');
         $type->setValue('text/html');
