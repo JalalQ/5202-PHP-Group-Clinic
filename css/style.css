@@ -138,7 +138,7 @@ body {
 
 /*===== FIXED BACKGROUND IMG =====*/
 .fixed {
-  background-image: url("../img/background.jpg");
+  background-image: url("../img/HOME-PAGE/background.jpg");
   filter: brightness(40%);
 
   position: fixed;

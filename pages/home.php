@@ -130,7 +130,7 @@
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
             </p>
-            <img class="img-fluid" src="img/HOME-PAGE/signature.png" alt="">
+            <img class="img-fluid" src="img/HOME-PAGE/massage1.jpg" alt="">
         </div>
     </div>
 </div>	

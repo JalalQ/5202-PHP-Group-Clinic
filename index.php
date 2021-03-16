@@ -2,7 +2,7 @@
 <?php
 $dirPages='pages/';//pages directory
 $pageExtension='.php';
-$pages_array= array('home','about_us','contact','admin_dashboard');
+$forbidden_pages_array= array();
 
 // if no page is requested display the home page
 if(!isset($_GET['page'])){
@@ -14,7 +14,7 @@ else{
 	
 	if (preg_match('/^[a-z0-9_\-]+$/i', $page)){
 				
-		if (in_array($page, $pages_array)) {
+		if (!in_array($page, $forbidden_pages_array)) {
 
 			include_once $dirPages.$page.$pageExtension;
 		}

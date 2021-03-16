@@ -1,0 +1,11 @@
+{
+    "require": {
+        "swiftmailer/swiftmailer" : "^6.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "WebApp2\\managers\\": "managers/"
+        }
+    }
+}
