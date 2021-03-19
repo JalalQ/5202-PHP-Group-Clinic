@@ -1,0 +1,41 @@
+/*
+Light white: #f6f5f5
+Dark blue: #413c69
+Blue: #4a47a3
+Blue grey: #709fb0
+Light blue: #a7c5eb
+ */
+/* General */
+body {
+    color: #413c69;
+    font-size: 1.3rem;
+}
+/* Title */
+.faq-title-container {
+    background-image: url("../img/FAQ/faq1.jpg");
+    background-size: cover;
+    background-position: 30% 100%;
+}
+.faq-title {
+    font-weight: 400;
+}
+/* Collapse button */
+.card-bg {
+    background-color: #fff;
+}
+.card-bg:hover {
+    background-color: rgba(112, 159, 176, .4);
+}
+.faq-button {
+    color: #413c69;
+    font-size: 1.3rem;
+}
+.faq-button:link,
+.faq-button:visited {
+    text-decoration: none;
+}
+.faq-button:hover,
+.faq-button:focus {
+    color: #413c69;
+    text-decoration: none;
+}
