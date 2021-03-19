@@ -192,7 +192,7 @@
                 <div class="container-fluid pb-3"><!--Data will be retrieved from database using PHP-->
                     <div class="list-group gap-2">
                         <a href="#" class="list-group-item section_helpdesk_item" aria-current="true">
-                            2021-02-21 11:00 Patient Name New
+                            2021-02-21 11:00 Patient Name Newgi
                         </a>
                         <a href="#" class="list-group-item section_helpdesk_item">
                             2021-02-21 11:15 Patient Name New
