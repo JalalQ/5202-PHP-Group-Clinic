@@ -8,6 +8,7 @@ Light blue: #a7c5eb
 /* GENERAL STYLE */
 body {
     color: #413c69;
+    font-size: 1.3rem;
 }
 h1 {
     margin: 0;
@@ -45,6 +46,7 @@ main {
 .sidebar_sticky {
     background-color: rgba(112,159,176,.1);
     box-shadow: 2px 0 1px -2px #413c69;
+    font-size: 1.1rem;
 }
 .sidebar_item:link,
 .sidebar_item:visited {
@@ -107,6 +109,13 @@ main {
     height: 300px;
     overflow: scroll;
 }
+.calendar-monthly {
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #fff;
+    height: 100%;
+    overflow: scroll;
+}
 /* HELPDESK */
 .section_helpdesk_item {
     border-radius: 4px;
@@ -120,6 +129,9 @@ main {
 .section_helpdesk_item:active {
     background-color: #fff;
     color: #413c69;
+}
+#helpMsg {
+    display: none;
 }
 /* MEDIA QUERIES */
 @media only screen and (max-width: 1200px) {

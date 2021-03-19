@@ -13,6 +13,9 @@
                             <a class="nav-link active" href="index.php?page=about_us"></i> About us </a>
                         </li>
                         <li class="nav-item active">
+                            <a class="nav-link active" href="index.php?page=faq"></i> FAQ </a>
+                        </li>
+                        <li class="nav-item active">
                             <a class="nav-link active" href="index.php?page=contact"><i class="fa fa-envelope"></i> Contact </a>
                         </li>
                         <li class="nav-item">
