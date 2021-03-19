@@ -37,7 +37,7 @@
                     </div>
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
-                            We offer treatments that help physical rehabilitation, injury prevention, health and fitness. Our services include physiotherapy, acupuncture, and massage therapy.
+                            We offer treatments that help physical rehabilitation, injury prevention, health and fitness. Our services include physiotherapy, Occupational Therapy, and massage therapy.
                         </div>
                     </div>
                 </div>
