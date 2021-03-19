@@ -103,9 +103,9 @@
         <div class="col-lg-6">
             <h6>Building stronger, happier & healthy lifestyles </h6>
             <h1>We Specialize in Recovery</h1>
-            <p><span>PHYSIOTHERAPY, CHIROPRACTIC, MASSAGE THERAPY and more!</span></p>
+            <p><span>PHYSIOTHERAPY, OCCUPATIONAL THERAPY, MASSAGE THERAPY and more!</span></p>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+                Not only do we offer physiotherapy services, but also occupational therapy and massage therapy. We offer everything to get you back on your feet and moving!
             </p>
             <img class="img-fluid" src="img/signature.png" alt="">
         </div>
@@ -209,20 +209,20 @@
         <div class="col-md-4 my-4">
             <i class="fas fa-dumbbell w-100"></i>
             <h4 class="my-4">"Amazing. Incredible"</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>-Local Customer John.</p>
             <a href="#" class="btn btn-outline-dark btn-md">Reviews</a>
         </div>
         <div class="col-md-4 my-4">
             <i class="fas fa-biking w-100"></i>
             <h4 class="my-4">Any Questions?</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>We have tons of answers for your questions here.</p>
             <a href="#" class="btn btn-outline-dark btn-md">FAQ</a>
         </div>
 
         <div class="col-md-4 my-4">
             <i class="fas fa-user-md w-100"></i>
             <h4 class="my-4">Locations</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>First time visitor ? Find out where to find us here.</p>
             <a href="#" class="btn btn-outline-dark btn-md">Location</a>
         </div>
     
