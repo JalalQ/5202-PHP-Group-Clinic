@@ -5,5 +5,13 @@ function displayMenu() {
 }
 
 let btn = document.getElementById("btn-toggle");
-
 btn.onclick = displayMenu;
+
+//FUNCTION TO OUTPUT MESSAGE FOR HELPDESK
+function displayHelpMsg() {
+    let helpMsg = document.getElementById("helpMsg");
+    helpMsg.classList.toggle("d-block");
+}
+
+let link1 = document.getElementById("link1");
+link1.onclick = displayHelpMsg;
