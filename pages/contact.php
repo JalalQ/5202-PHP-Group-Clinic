@@ -27,7 +27,7 @@
 			include_once 'header.php';
         ?>
 			<div class="contact-content-wrapper container">
-				<h1>Contact The Clinic</h1>
+				<h1>Contact Us</h1>
 				<ul id="contact-address">
 	                	<li>QC health clinic</li>
 	                	<li>3011 Bayview Avenue</li>
