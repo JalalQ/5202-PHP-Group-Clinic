@@ -31,13 +31,14 @@
         <main class="content-wrapper container">
 
         	<h1>COVID-19 self-assessment result</h1>
-           <p class="result-datetime">
+            <p class="result-datetime">
            	<?php
            	date_default_timezone_set("America/New_York");
            	echo date("Y-m-d h:i a");
            	?>
-           </p>
-        	<div class="result-wrapper">
+            </p>
+
+            <div class="fail-result-wrapper">
         		<p>
         			<strong>
         			Dear fullname,
@@ -45,12 +46,12 @@
         		</p>
         		<p>
         			<strong>
-        			Based on your answers, you do not appear to have any symptoms or to be part of an at-risk group.
+        			Based on your answers, we recommend that you get tested before coming to our hospital, because you have symptoms or are a "close contact" of someone who currently has COVID-19.
         			</strong>
         		</p>
-        		So, you can come to our hospital for your appointment. To protect your community and the health care system do not forget to wear a face covering or mask and  keep a physical distance from others.
+        		Since you have symptoms or have been exposed to COVID-19, you can only be tested at an assessment centre or community lab. Pharmacy tests are only available for those without symptoms or exposure. For more informations the testing locations nearby your neighborhood go on <a href="https://covid-19.ontario.ca/assessment-centre-locations?pcd=m9v&s=true">Ontario testing locations.</a>
         		</p>
-        	</div>
+        	 </div>
 
         	<div class="choices-wrapper">
 
@@ -58,7 +59,7 @@
         		<a href="index.php?page=home" class="btn btn-secondary btn-lg">Quit</a>
         		
         	</div>   
-         </main>
+        </main>
 		    <?php	
 				include_once 'footer.php';
 			?>
