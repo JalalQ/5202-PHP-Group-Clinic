@@ -27,7 +27,7 @@
 
 			include_once 'header.php';
         ?>
-        <div> <a href="index.php?page=covid_questionnaire_symptoms" class="btn btn-link ">< Back</a></div>
+        <div> <a href="index.php?page=covid_questionnaire_exposure" class="btn btn-link ">< Back</a></div>
         <main class="content-wrapper container">
 
         	<h1>COVID-19 questionnaire</h1>
@@ -36,7 +36,7 @@
             <p><em>If you already went for a test and got a negative result, select "No".</em></p>
         	<div class="choices-wrapper">
 
-        		<a href="" class="btn btn-secondary btn-lg">yes</a> 
+        		<a href="index.php?page=covid_questionnaire_fail_result" class="btn btn-secondary btn-lg">yes</a> 
         		<a href="index.php?page=covid_questionnaire_travel" class="btn btn-secondary btn-lg">no</a>
         		
         	</div>        	

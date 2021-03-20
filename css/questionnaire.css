@@ -58,12 +58,19 @@ form#form-symptoms input[type="checkbox"]{
   -webkit-transform: scale(1.5); /* Safari and Chrome */
   -o-transform: scale(1.5); /* Opera */
 }
-.result-wrapper{
-	background-color: #c8c6a7;
+.success-result-wrapper,.fail-result-wrapper{
 	padding: 1em;
 	margin: 1em;
 	border-radius: 5px;
 	border: 2px solid #276678;
+}
+
+.success-result-wrapper{
+	background-color: #c8c6a7;
+}
+
+.fail-result-wrapper{
+	background-color: #ff7171;	
 }
 
 .result-datetime{

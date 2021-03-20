@@ -47,7 +47,7 @@
 
         	<div class="choices-wrapper">
 
-        		<a href="" class="btn btn-secondary btn-lg">yes</a> 
+        		<a href="index.php?page=covid_questionnaire_fail_result" class="btn btn-secondary btn-lg">yes</a> 
         		<a href="index.php?page=covid_questionnaire_exposure" class="btn btn-secondary btn-lg">no</a>
         		
         	</div>        	

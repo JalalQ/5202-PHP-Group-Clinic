@@ -6,6 +6,11 @@ if(isset($_POST['continue']) && isset($_POST['symptoms'])){
 		header("Location: index.php?page=covid_questionnaire_risk_factors");
 		exit;
 	}
+	else{
+		
+		header("Location: index.php?page=covid_questionnaire_fail_result");
+		exit;
+	}
 }
 ?>
 

@@ -17,7 +17,7 @@
 	    <!-- Style FOR HEADER AND FOOTER -->
 	    <link rel="stylesheet" href="css/HeaderFooter.css">
 	    <script src="https://kit.fontawesome.com/c03ea9a48c.js" crossorigin="anonymous"></script>
-	   
+	    
 
 
 	</head>
@@ -27,21 +27,38 @@
 
 			include_once 'header.php';
         ?>
-        <div> <a href="index.php?page=covid_questionnaire_risk_factors" class="btn btn-link ">< Back</a></div>
+      
         <main class="content-wrapper container">
 
-        	<h1>COVID-19 questionnaire</h1>
-            
-        	<p class="question"><strong>In the last 14 days, have you been identified as a “close contact” of someone who currently has COVID-19?</strong></p>
+        	<h1>COVID-19 self-assessment result</h1>
+           <p class="result-datetime">
+           	<?php
+           	date_default_timezone_set("America/New_York");
+           	echo date("Y-m-d h:i a");
+           	?>
+           </p>
+        	<div class="success-result-wrapper">
+        		<p>
+        			<strong>
+        			Dear fullname,
+        			</strong>
+        		</p>
+        		<p>
+        			<strong>
+        			Based on your answers, you do not appear to have any symptoms or to be part of an at-risk group.
+        			</strong>
+        		</p>
+        		So, you can come to our hospital for your appointment. To protect your community and the health care system do not forget to wear a face covering or mask and  keep a physical distance from others.
+        		</p>
+        	</div>
 
         	<div class="choices-wrapper">
 
-        		<a href="index.php?page=covid_questionnaire_fail_result" class="btn btn-secondary btn-lg">yes</a> 
-        		<a href="index.php?page=covid_questionnaire_alert" class="btn btn-secondary btn-lg">no</a>
         		
-        	</div>        	
-
-	    </main>
+        		<a href="index.php?page=home" class="btn btn-secondary btn-lg">Quit</a>
+        		
+        	</div>   
+         </main>
 		    <?php	
 				include_once 'footer.php';
 			?>
