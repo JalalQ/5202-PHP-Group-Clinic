@@ -1,0 +1,13 @@
+{
+    "require": {
+        "swiftmailer/swiftmailer" : "^6.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "WebApp2\\ObjectManagers\\": "objectManagers/",
+            "WebApp2\\Objects\\": "objecs/",
+            "WebApp2\\Database\\": "database/"
+        }
+    }
+}

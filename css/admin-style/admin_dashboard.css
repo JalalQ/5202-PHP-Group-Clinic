@@ -1,0 +1,166 @@
+/*
+Light white: #f6f5f5
+Dark blue: #413c69
+Blue: #4a47a3
+Blue grey: #709fb0
+Light blue: #a7c5eb
+ */
+/* GENERAL STYLE */
+body {
+    color: #413c69;
+    font-size: 1.3rem;
+}
+h1 {
+    margin: 0;
+}
+main {
+    background-color: rgba(112,159,176,.1);
+}
+.detail-links:link,
+.detail-links:visited {
+    color: #413c69;
+}
+.detail-links:hover,
+.detail-links:active {
+    color: #a7c5eb;
+}
+/* TOGGLE MENU */
+.dropdown {
+    display: none;
+    top: 23%;
+    right: 5%;
+    z-index: 100;
+}
+#btn-toggle,
+#toggle-menu-item {
+    background-color: #413c69;
+}
+#toggle-menu-item {
+    right: 67px;
+}
+/* TOGGLE CLASS */
+.show {
+    display: block;
+}
+/* SIDEBAR */
+.sidebar_sticky {
+    background-color: rgba(112,159,176,.1);
+    box-shadow: 2px 0 1px -2px #413c69;
+    font-size: 1.1rem;
+}
+.sidebar_item:link,
+.sidebar_item:visited {
+    color: #413c69;
+}
+.sidebar_item:hover,
+.sidebar_item:active {
+    color: #a7c5eb;
+}
+.icons {
+    font-size: 1.25rem;
+}
+/* 3 COLUMNS */
+#card_col-3 {
+    margin: 0;
+}
+.card_item {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#card_number,
+#card_patients,
+#card_doctors {
+    height: 150px;
+}
+#card_patients {
+    background-color: #a7c5eb;
+}
+#card_doctors {
+    background-color: #4a47a3;
+}
+#card_patients a,
+#card_doctors a {
+    width: 100%;
+    height: 100%;
+}
+#card_patients a:link,
+#card_patients a:visited {
+    color: #413c69;
+}
+#card_doctors a:link,
+#card_doctors a:visited {
+    color: #f6f5f5;
+}
+#card_patients a:hover,
+#card_patients a:active {
+    color: #f6f5f5;
+}
+#card_doctors a:hover,
+#card_doctors a:active {
+    color: #a7c5eb;
+}
+/* APPOINTMENTS */
+.calendar {
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 300px;
+    overflow: scroll;
+}
+.calendar-monthly {
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #fff;
+    height: 100%;
+    overflow: scroll;
+}
+/* HELPDESK */
+.section_helpdesk_item {
+    border-radius: 4px;
+}
+.section_helpdesk_item:link,
+.section_helpdesk_item:visited {
+    background-color: rgba(112,159,176,.3);
+    color: #413c69;
+}
+.section_helpdesk_item:hover,
+.section_helpdesk_item:active {
+    background-color: #fff;
+    color: #413c69;
+}
+#helpMsg {
+    display: none;
+}
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1200px) {
+    #sidebar_nav{
+        padding-left: 15px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .sidebar_item {
+        padding-left: 0;
+    }
+    .icons {
+        font-size: 1rem;
+        width: 25px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .sidebar_sticky {
+        display: none;
+    }
+    .dropdown {
+        display: block;
+    }
+    #toggle-menu-item {
+        padding-left: 10px;
+    }
+}
+@media only screen and (max-width: 426px) {
+    .dropdown {
+        top: 28%;
+    }
+}

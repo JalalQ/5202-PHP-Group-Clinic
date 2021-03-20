@@ -1,0 +1,79 @@
+.content-wrapper{
+	color: black;	
+	max-width: 1200px;
+	margin: auto;
+}
+
+h1{
+	text-transform: uppercase;
+	color: #276678;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+.questionnaire-info{
+	font-size: 0.7em;
+	border-left: 5px solid #276678;
+	padding-left: 1em;
+	margin-bottom: 2em;
+}
+p#updated-date, p#version{
+	margin: 0px;
+}
+
+.questionaire-link-wrapper{
+	text-align: center;
+	margin: 1.5em;
+}
+
+.questionaire-link-wrapper a{
+	border-radius: 5px;
+}
+
+.question{
+	font-size: 1.5em;
+	margin-top: 1em;
+}
+.choices-wrapper{
+	text-align: center;
+	margin: 1em;
+	
+}
+
+.choices-wrapper a, .choices-wrapper input[type="submit"]{
+	display: inline-block;
+	margin-left: 1em;
+	margin-right: 1em;
+	text-transform: capitalize;
+	width: 12em;
+	border-radius: 5px;
+}
+form#form-symptoms label{
+	margin-left: 0.5em;
+}
+
+form#form-symptoms input[type="checkbox"]{
+	/* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+}
+.success-result-wrapper,.fail-result-wrapper{
+	padding: 1em;
+	margin: 1em;
+	border-radius: 5px;
+	border: 2px solid #276678;
+}
+
+.success-result-wrapper{
+	background-color: #c8c6a7;
+}
+
+.fail-result-wrapper{
+	background-color: #ff7171;	
+}
+
+.result-datetime{
+	color: gray;
+	font-size: 0.8em;
+}
