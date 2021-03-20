@@ -34,7 +34,7 @@
                 <nav>
                     <ul class="dropdown-menu" id="toggle-menu-item">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
+                            <a class="nav-link active" aria-current="page" href="index.php?page=admin_dashboard">
                                 <div class="d-flex justify-content-start">
                                     <i class="fas fa-home fa-fw mt-1 mr-1"></i>
                                     <p>Dashboard</p>
@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="index.php?page=admin_dashboard_appointments">
                                 <div class="d-flex justify-content-start">
                                     <i class="fas fa-calendar-check fa-fw mt-1 mr-1"></i>
                                     <p>Appointments</p>
@@ -74,7 +74,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="index.php?page=admin_dashboard_helpdesk">
                                 <div class="d-flex justify-content-start">
                                     <i class="fas fa-hands-helping fa-fw mt-1 mr-1"></i>
                                     <p>Helpdesk</p>
@@ -116,8 +116,8 @@
 
             <!--APPOINTMENTS-->
             <section class="card my-4 shadow-sm" id="section_appointment">
-                <h2 class="my-3 ml-3">Appointments</h2>
-                <a href="#" class="nav-link mb-2 detail-links" >Check more</a>
+                <h2 class="mt-3 mb-1 ml-3">Today's Appointments</h2>
+                <a href="index.php?page=admin_dashboard_appointments" class="nav-link mb-2 detail-links" >Check Monthly Calendar</a>
                 <div class="container-fluid">
                     <div class="calendar mb-3"><!--table will be generated using PHP-->
                         <table class="table overflow-scroll">
@@ -187,12 +187,12 @@
 
             <!--HELPDESK-->
             <section class="card mb-5 shadow-sm" id="section_helpdesk">
-                <h2 class="my-3 ml-3">Helpdesk</h2>
-                <a href="#" class="nav-link mb-2 detail-links">Check more</a>
+                <h2 class="mt-3 mb-1 ml-3">Helpdesk</h2>
+                <a href="index.php?page=admin_dashboard_helpdesk" class="nav-link mb-2 detail-links">Reply to Messages</a>
                 <div class="container-fluid pb-3"><!--Data will be retrieved from database using PHP-->
                     <div class="list-group gap-2">
                         <a href="#" class="list-group-item section_helpdesk_item" aria-current="true">
-                            2021-02-21 11:00 Patient Name New
+                            2021-02-21 11:00 Patient Name Newgi
                         </a>
                         <a href="#" class="list-group-item section_helpdesk_item">
                             2021-02-21 11:15 Patient Name New
@@ -219,7 +219,7 @@
         <nav class="sticky-top container-fluid pt-5" id="sidebar_nav">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active sidebar_item" aria-current="page" href="#">
+                    <a class="nav-link active sidebar_item" aria-current="page" href="index.php?page=admin_dashboard">
                         <div class="d-flex justify-content-start">
                             <i class="fas fa-home fa-fw mr-1 icons"></i>
                             <p>Dashboard</p>
@@ -251,7 +251,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link sidebar_item" href="#">
+                    <a class="nav-link sidebar_item" href="index.php?page=admin_dashboard_appointments">
                         <div class="d-flex justify-content-start">
                             <i class="fas fa-calendar-check fa-fw mr-1 icons"></i>
                             <p>Appointments</p>
@@ -259,7 +259,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link sidebar_item" href="#">
+                    <a class="nav-link sidebar_item" href="index.php?page=admin_dashboard_helpdesk">
                         <div class="d-flex justify-content-start">
                             <i class="fas fa-hands-helping fa-fw mr-1 icons"></i>
                             <p>Helpdesk</p>

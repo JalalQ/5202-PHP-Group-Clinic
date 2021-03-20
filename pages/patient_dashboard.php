@@ -39,7 +39,7 @@ include_once 'header.php';
                 </div>
                 <div class="col-lg-4 mt-3"><!--Patient Info-->
                     <div class="card shadow-sm text-center" id="card_patients">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?page=patient_info" class="nav-link">
                             <span class="h2 card_item">My Info <i class="fas fa-hospital-user"></i></span>
                         </a>
                     </div>
