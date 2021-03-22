@@ -130,7 +130,6 @@
                     <p>
                         Not only do we offer physiotherapy services, but also occupational therapy and massage therapy. We offer everything to get you back on your feet and moving!
                     </p>
-                    <img class="img-fluid" src="img/HOME-PAGE/massage1.jpg" alt="">
                 </div>
             </div>
         </div>	
