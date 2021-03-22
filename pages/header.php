@@ -16,7 +16,7 @@
                             <a class="nav-link active" href="index.php?page=about_us"></i> About us </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link active" href="index.php?page=home"></i> Services </a>
+                            <a class="nav-link active" href="index.php?page=indexServices"></i> Services </a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link active" href="index.php?page=faq"></i> FAQ </a>
