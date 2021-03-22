@@ -41,7 +41,7 @@
 
 
         <!-- Image Carousel -->
-        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
 
 
             <!-- Carousel Content -->
@@ -55,8 +55,8 @@
                                     <h1>QC Health Clinic</h1>
                                     <div class="border-top border-primary w-50 mx-auto my-3"></div>
                                         <h3 class="pb-3"></h3>
-                                        <a href="#" class="btn btn-danger bn-lg mr-2">Learn More</a>
-                                        <a href="#" class="btn btn-danger bn-lg mr-2">Book Now</a>
+                                        <a href=index.php?page=about_us class="btn btn-danger bn-lg mr-2">Learn More</a>
+                                        <a href="index.php?page=patient_dashboard" class="btn btn-danger bn-lg mr-2">Book Now</a>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                             <div class="row justify-content-end text-right">
                                 <div class="col-5 bg-custom d-none d-lg-block py-3 px-0 pr-3 pb-3">
                                     <p class="lead">Keeping You Moving</p>
-                                    <a href="#" class="btn btn-danger bn-lg mr-2">What we do</a>
+                                    <a href="index.php?page=about_us" class="btn btn-danger bn-lg mr-2">What we do</a>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                             <div class="row justify-content-start text-left">
                                 <div class="col-5 bg-custom d-none d-lg-block py-3 px-0 pl-3 pb-3">
                                     <p class="lead">With You From Beginning to End</p>
-                                    <a href="#" class="btn btn-danger bn-lg">See How We Can Help</a>
+                                    <a href=index.php?page=indexServices class="btn btn-danger bn-lg">See How We Can Help</a>
                                 </div>
                             </div>
                         </div>
@@ -158,7 +158,7 @@
                             Physiotherapy can be defined as a treatment method that focuses on the science of movement and helps people to restore, maintain and maximize their physical strength, function, motion and overall well-being by addressing the underlying physical issues.
                         </p>	
                         <div class="single-menu__btn">
-                            <a href="#" class="btn btn-outline-dark btn-lg">Book Here</a>
+                            <a href=index.php?page=patient_register class="btn btn-outline-dark btn-lg">Book Here</a>
                         </div>							
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                             Occupational therapy is a client-centred health profession concerned with promoting health and well being through occupation. The primary goal of occupational therapy is to enable people to participate in the activities of everyday life.
                         </p>
                         <div class="single-menu__btn">
-                            <a href="#" class="btn btn-outline-dark btn-lg">Book Here</a>
+                            <a href=index.php?page=patient_register class="btn btn-outline-dark btn-lg">Book Here</a>
                         </div>
                                                         
                     </div>
@@ -188,7 +188,7 @@
                             Massage Therapy is the manipulation of the body's soft tissues. Massage techniques are commonly applied with hands, fingers, elbows, knees, forearms, feet, or a device. The purpose of massage is generally for the treatment of body stress or pain. 
                         </p>	
                         <div class="single-menu__btn">
-                            <a href="#" class="btn btn-outline-dark btn-lg">Book Here</a>
+                            <a href=index.php?page=patient_register class="btn btn-outline-dark btn-lg">Book Here</a>
                         </div>							
                     </div>
                 </div>	
@@ -210,7 +210,7 @@
                 <div class="col-12 text-center">
                     <h2>Organize & Schedule with Ease</h2>
                     <h3 class="py-4">Click to see how we make scheduling appointments easier than ever</h3>
-                        <button type="button" data-toggle="modal" data-target="#modal1" class="btn btn-primary btn-lg mr-2">Create An Account To Use Our Booking App</button>
+                        <a href=index.php?page=patient_register class="btn btn-primary btn-lg mr-2">Create An Account To Use Our Booking App</a>
                         
                 </div>
             </div>
@@ -232,20 +232,20 @@
                     <i class="fas fa-dumbbell w-100"></i>
                     <h4 class="my-4">"Amazing. Incredible"</h4>
                     <p>-Local Customer John.</p>
-                    <a href="#" class="btn btn-outline-dark btn-md">Reviews</a>
+                    <a href=index.php?page=indexReview class="btn btn-outline-dark btn-md">Reviews</a>
                 </div>
                 <div class="col-md-4 my-4">
                     <i class="fas fa-biking w-100"></i>
                     <h4 class="my-4">Any Questions?</h4>
                     <p>We have tons of answers for your questions here.</p>
-                    <a href="#" class="btn btn-outline-dark btn-md">FAQ</a>
+                    <a href=index.php?page=faq class="btn btn-outline-dark btn-md">FAQ</a>
                 </div>
 
                 <div class="col-md-4 my-4">
                     <i class="fas fa-user-md w-100"></i>
                     <h4 class="my-4">Locations</h4>
                     <p>First time visitor ? Find out where to find us here.</p>
-                    <a href="#" class="btn btn-outline-dark btn-md">Location</a>
+                    <a href=index.php?page=contact class="btn btn-outline-dark btn-md">Location</a>
                 </div>
             
             </div>
@@ -281,7 +281,7 @@
                         We are here to help
                     </div>
                     <div class="col-md-5 col-lg-4 col-xl-3">
-                        <a href="#" class="btn btn-primary btn-lg">Contact Today</a>
+                        <a href=index.php?page=contact class="btn btn-primary btn-lg">Contact Today</a>
                     </div>
                 </div>
             </div>
