@@ -18,7 +18,9 @@ class ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'WebApp2\\managers\\' => 17,
+            'WebApp2\\Objects\\' => 16,
+            'WebApp2\\ObjectManagers\\' => 23,
+            'WebApp2\\Database\\' => 17,
         ),
         'S' => 
         array (
@@ -27,6 +29,10 @@ class ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Polyfill\\Iconv\\' => 23,
+        ),
+        'P' => 
+        array (
+            'PHP\\Classes\\' => 12,
         ),
         'E' => 
         array (
@@ -39,9 +45,17 @@ class ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83
     );
 
     public static $prefixDirsPsr4 = array (
-        'WebApp2\\managers\\' => 
+        'WebApp2\\Objects\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/managers',
+            0 => __DIR__ . '/../..' . '/objecs',
+        ),
+        'WebApp2\\ObjectManagers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/objectManagers',
+        ),
+        'WebApp2\\Database\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/database',
         ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
@@ -63,6 +77,10 @@ class ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
         ),
+        'PHP\\Classes\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/classes',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -74,6 +92,7 @@ class ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
     );
 
