@@ -5,10 +5,10 @@ https://www.bootdey.com/snippets/view/Social-network-profile-with-panels-->
 
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Dr Deo's Profile</h1>
+            <h1 class="jumbotron-heading">Our Team</h1>
             <p class="lead text-muted"></p>
             <p>
-                <a href="#" class="btn btn-primary my-2">Edit Profile</a>
+                <a href="index.php?page=doctorAdmin" class="btn btn-primary my-2">Edit Profile - Admin</a>
                 <!--<a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
             </p>
         </div>
@@ -18,8 +18,11 @@ https://www.bootdey.com/snippets/view/Social-network-profile-with-panels-->
     <div class="wrapper">
         <div class="container">
 
+            <!-- doctor's information container -->
             <div class="wraper">
 
+                <!-- for each doctor -->
+                <?php foreach ($doctorsList as $dr) { ?>
                 <div class="row">
                     <div class="col-lg-12">
 
@@ -27,7 +30,8 @@ https://www.bootdey.com/snippets/view/Social-network-profile-with-panels-->
                             <div class="tab-pane active" id="home-2">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <!-- Personal-Information -->
+
+                                        <!-- General-Information -->
                                         <div class="panel panel-default panel-fill">
                                             <div class="panel-heading">
                                                 <h3 class="panel-title">Personal Information</h3>
@@ -36,69 +40,65 @@ https://www.bootdey.com/snippets/view/Social-network-profile-with-panels-->
                                                 <div class="about-info-p">
                                                     <strong>Full Name</strong>
                                                     <br>
-                                                    <p class="text-muted">Johnathan Deo</p>
+                                                    <p class="text-muted">
+                                                        <span><?= $dr->first_name; ?></span>
+                                                        <span><?= $dr->last_name; ?></span>
+                                                    </p>
                                                 </div>
                                                 <div class="about-info-p">
                                                     <strong>CPSO registration</strong>
                                                     <br>
-                                                    <p class="text-muted">3849 39</p>
+                                                    <p class="text-muted"><?= $dr->cpso_reg; ?></p>
                                                 </div>
                                                 <div class="about-info-p">
                                                     <strong>Email</strong>
                                                     <br>
-                                                    <p class="text-muted">johnathandeon@moltran.com</p>
+                                                    <p class="text-muted"><?= $dr->email; ?></p>
                                                 </div>
                                                 <div class="about-info-p m-b-0">
                                                     <strong>Education</strong>
                                                     <br>
-                                                    <p class="text-muted">BSc (McMaster)</p>
+                                                    <p class="text-muted"><?= $dr->education; ?></p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Personal-Information -->
+                                        <!-- General-Information -->
 
-                                        <!-- Languages -->
+                                        <!-- Expertise -->
                                         <div class="panel panel-default panel-fill">
                                             <div class="panel-heading">
                                                 <h3 class="panel-title">Expertise</h3>
                                             </div>
                                             <div class="panel-body">
-                                                <ul>
-                                                    <li>Family Practise</li>
-                                                    <li>Nutrition Support OSAP approved</li>
-
-                                                </ul>
+                                                <?= $dr->expertise; ?>
                                             </div>
                                         </div>
-                                        <!-- Languages -->
+                                        <!-- Expertise -->
 
                                     </div>
 
+                                    <!-- Biography/ Personal Information -->
                                     <div class="col-md-8">
-                                        <!-- Personal-Information -->
+
                                         <div class="panel panel-default panel-fill">
                                             <div class="panel-heading">
                                                 <h3 class="panel-title">Biography</h3>
                                             </div>
                                             <div class="panel-body">
                                                 <p>
-                                                    Dr. Deo is the medical office specializing in delivering high-quality
-                                                    urgent care medicine. He’s a board-certified medical doctor,
-                                                    specializing in family practise. Dr. Deo was born in Nova Scotia and
-                                                    raised in British Columbia, CA. He graduated from McMaster University,
-                                                    and attended medical school at the University of California,
-                                                    Irvine.
+                                                    <?= $dr->biography; ?>
                                                 </p>
 
                                                 <p><strong>
                                                         Personal Summary
                                                     </strong></p>
 
-                                                <p>Dr Deo is married with 2 kids, and live in Hamilton. Dr Deo enjoys
-                                                gardening and hiking.</p>
+                                                <p>
+                                                    <?= $dr->personal; ?>
+                                                </p>
                                             </div>
                                         </div>
-                                        <!-- Personal-Information -->
+                                        <!-- Biography/ Personal Information -->
 
 
                                     </div>
@@ -109,11 +109,13 @@ https://www.bootdey.com/snippets/view/Social-network-profile-with-panels-->
 
                     </div>
                 </div>
+                <?php } ?>
 
 
             </div>
             <!-- end container -->
-			
+
+            <!-- Appointment -->
 			<section class="card my-4 shadow-sm" id="section_appointment">
                 <h2 class="mt-3 mb-1 ml-3">Weekly Appointment</h2>
                 <div class="container-fluid">
@@ -181,6 +183,7 @@ https://www.bootdey.com/snippets/view/Social-network-profile-with-panels-->
                     </div>
                 </div>
             </section>
+            <!-- Appointment -->
 			
         </div>
         <!-- end wrapper -->

@@ -1,3 +1,18 @@
+<?php
+use PHP\classes\Database;
+use PHP\classes\doctorDisplay;
+
+require_once 'vendor/autoload.php';
+
+//
+require_once 'classes/Database.php';
+require_once 'classes/doctorDisplay.php';
+
+$d = new doctorDisplay();
+$doctorsList = $d->getAllDoctors(Database::getDb());
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
