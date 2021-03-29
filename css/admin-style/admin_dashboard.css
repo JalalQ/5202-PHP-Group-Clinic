@@ -1,11 +1,25 @@
 /*
+CONTENTS
+
+* 1.COLORS
+* 2.GENERAL
+* 3.SIDEBAR
+* 4.3 COLUMNS
+* 5.APPOINTMENTS
+* 6.HELPDESK
+
+*/
+
+/* 1.COLORS */
+/*
 Light white: #f6f5f5
 Dark blue: #413c69
 Blue: #4a47a3
 Blue grey: #709fb0
 Light blue: #a7c5eb
  */
-/* GENERAL STYLE */
+
+/* 2.GENERAL */
 body {
     color: #413c69;
     font-size: 1.3rem;
@@ -15,6 +29,7 @@ h1 {
 }
 main {
     background-color: rgba(112,159,176,.1);
+    overflow: hidden;
 }
 .detail-links:link,
 .detail-links:visited {
@@ -24,29 +39,10 @@ main {
 .detail-links:active {
     color: #a7c5eb;
 }
-/* TOGGLE MENU */
-.dropdown {
-    display: none;
-    top: 23%;
-    right: 5%;
-    z-index: 100;
-}
-#btn-toggle,
-#toggle-menu-item {
-    background-color: #413c69;
-}
-#toggle-menu-item {
-    right: 67px;
-}
-/* TOGGLE CLASS */
-.show {
-    display: block;
-}
-/* SIDEBAR */
-.sidebar_sticky {
+/* 3.SIDEBAR */
+#sidebar_nav {
     background-color: rgba(112,159,176,.1);
     box-shadow: 2px 0 1px -2px #413c69;
-    font-size: 1.1rem;
 }
 .sidebar_item:link,
 .sidebar_item:visited {
@@ -57,9 +53,17 @@ main {
     color: #a7c5eb;
 }
 .icons {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
-/* 3 COLUMNS */
+#sidebar_toggle_btn {
+    cursor: pointer;
+}
+#sidebar_toggle_menu {
+    background-color: transparent;
+    position: unset;
+    border: none;
+}
+/* 4.3 COLUMNS */
 #card_col-3 {
     margin: 0;
 }
@@ -102,7 +106,7 @@ main {
 #card_doctors a:active {
     color: #a7c5eb;
 }
-/* APPOINTMENTS */
+/* 5.APPOINTMENTS */
 .calendar {
     border: 1px solid black;
     border-radius: 4px;
@@ -116,7 +120,7 @@ main {
     height: 100%;
     overflow: scroll;
 }
-/* HELPDESK */
+/* 6.HELPDESK */
 .section_helpdesk_item {
     border-radius: 4px;
 }
@@ -132,35 +136,4 @@ main {
 }
 #helpMsg {
     display: none;
-}
-/* MEDIA QUERIES */
-@media only screen and (max-width: 1200px) {
-    #sidebar_nav{
-        padding-left: 15px;
-    }
-}
-@media only screen and (max-width: 1024px) {
-    .sidebar_item {
-        padding-left: 0;
-    }
-    .icons {
-        font-size: 1rem;
-        width: 25px;
-    }
-}
-@media only screen and (max-width: 992px) {
-    .sidebar_sticky {
-        display: none;
-    }
-    .dropdown {
-        display: block;
-    }
-    #toggle-menu-item {
-        padding-left: 10px;
-    }
-}
-@media only screen and (max-width: 426px) {
-    .dropdown {
-        top: 28%;
-    }
 }
