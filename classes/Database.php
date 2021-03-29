@@ -5,7 +5,7 @@ namespace PHP\Classes;
 class Database {
 
     private static $user = "root";
-    private static $pass = "root";
+    private static $pass = "";
     private static $dsn ="mysql:host=localhost;dbname=qc_health_clinic";
     private static $dbcon;
 
@@ -22,7 +22,7 @@ class Database {
                 self::$dbcon->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
             } catch (\PDOException $e) {
                 $msg = $e->getMessage();
-                include '../custom-error.php';
+                include 'pages/custom-error.php';
                 exit();
             }
         }
