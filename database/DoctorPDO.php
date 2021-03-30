@@ -1,9 +1,17 @@
 <?php
 
-namespace PHP\Classes;
+namespace WebApp2\Database;
 
-class doctorCrud
+class DoctorPDO
 {
+    public function getAllDoctors($dbcon){
+        $sql = "SELECT * FROM doctor";
+        $pdostm = $dbcon->prepare($sql);
+        $pdostm->execute();
+
+        $doctors = $pdostm->fetchAll(\PDO::FETCH_OBJ);
+        return $doctors;
+    }
     //the View Operation
     public function getdoctorById($id, $dbcon){
         $sql = "SELECT * FROM doctor where id = :id";

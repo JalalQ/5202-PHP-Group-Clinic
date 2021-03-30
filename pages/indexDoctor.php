@@ -1,14 +1,12 @@
 <?php
-use PHP\classes\Database;
-use PHP\classes\doctorDisplay;
+use WebApp2\Database\Database;
+use WebApp2\Database\DoctorPDO;
 
 require_once 'vendor/autoload.php';
 
-//
-require_once 'classes/Database.php';
-require_once 'classes/doctorDisplay.php';
 
-$d = new doctorDisplay();
+
+$d = new DoctorPDO();
 $doctorsList = $d->getAllDoctors(Database::getDb());
 
 ?>

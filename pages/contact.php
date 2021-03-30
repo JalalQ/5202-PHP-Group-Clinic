@@ -25,61 +25,63 @@
 		<?php
 
 			include_once 'header.php';
+			
         ?>
-			<div class="contact-content-wrapper container">
-				<h1>Contact Us</h1>
-				<ul id="contact-address">
-	                	<li>QC health clinic</li>
-	                	<li>3011 Bayview Avenue</li>
-	                	<li>Toronto, ON</li>
-	                	<li>Canada M4N 3M5</li>
-	                	<li>Phone: <span>705-123-4567</span></li>
-	                	
-	                </ul>
-				<section>
-					<h2>Visiting Hours</h2>
+        <div class="contact-content-wrapper container">
+			<h1>Contact Us</h1>
+			<ul id="contact-address">
+                	<li>QC health clinic</li>
+                	<li>3011 Bayview Avenue</li>
+                	<li>Toronto, ON</li>
+                	<li>Canada M4N 3M5</li>
+                	<li>Phone: <span>705-123-4567</span></li>
+                	
+                </ul>
+			<section>
+				<h2>Visiting Hours</h2>
 
-	                <p>
-	                	Due to COVID-19, and under guidance from the Chief Medical Officer, <span class="contact-COVID19-text">visitor restrictions</span> are in place during this time.
-	                </p>
-	                <div id="map">
-	                	<img src="https://maps.googleapis.com/maps/api/staticmap?center=3011 Bayview Avenue,Toronto,CA&zoom=13&size=400x400&scale=2&maptype=terrain&key=AIzaSyA_YZ6LZmY8FhMhgOOmQmZ230h08WaCom0
-                    ">
-	                	
-	                </div>
-	                
-				</section>
-				<form method="#" action="POST" name="contact-form" id="contact-form">
-					<h2>Contact form</h2>
-					<label id="contact-form-req"><span>*</span> indicates a required field.</label>
-					<div class="form-group">
-	    				<label for="firstname">firstname<span>*</span></label>
-	   					<input type="text" class="form-control" id="firstname" name="firstname" required>
-	  				</div>
+                <p>
+                	Due to COVID-19, and under guidance from the Chief Medical Officer, <span class="contact-COVID19-text">visitor restrictions</span> are in place during this time.
+                </p>
+                <div id="map">
+                	<img src="https://maps.googleapis.com/maps/api/staticmap?center=3011 Bayview Avenue,Toronto,CA&zoom=13&size=400x400&scale=2&maptype=terrain&key=AIzaSyA_YZ6LZmY8FhMhgOOmQmZ230h08WaCom0
+                ">
+                	
+                </div>
+                
+			</section>
+			<form method="#" action="POST" name="contact-form" id="contact-form">
+				<h2>Contact form</h2>
+				<label id="contact-form-req"><span>*</span> indicates a required field.</label>
+				<div class="form-group">
+    				<label for="firstname">firstname<span>*</span></label>
+   					<input type="text" class="form-control" id="firstname" name="firstname" required>
+  				</div>
 
-	  				<div class="form-group">
-	    				<label for="lastname">lastname<span>*</span></label>
-	   					<input type="text" class="form-control" id="lastname" name="lastname">
-	  				</div>
+  				<div class="form-group">
+    				<label for="lastname">lastname<span>*</span></label>
+   					<input type="text" class="form-control" id="lastname" name="lastname">
+  				</div>
 
-					<div class="form-group">
-	    				<label for="email">Email<span>*</span></label>
-	   					<input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-	  				</div>
+				<div class="form-group">
+    				<label for="email">Email<span>*</span></label>
+   					<input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+  				</div>
 
-	  				<div class="form-group">
-	    				<label for="phone">phone<span>*</span></label>
-	   					<input type="tel" class="form-control"  id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-	  				</div>
+  				<div class="form-group">
+    				<label for="phone">phone<span>*</span></label>
+   					<input type="tel" class="form-control"  id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+  				</div>
 
-	  				<div class="form-group">
-	    				<label for="comment">Your message<span>*</span></label>
-	   					<textarea class="form-control" id="comment" name="comment" required></textarea> 
-	  				</div>
-	  				<button type="submit" class="btn btn-dark btn-lg">Send</button>
-				</form>
+  				<div class="form-group">
+    				<label for="comment">Your message<span>*</span></label>
+   					<textarea class="form-control" id="comment" name="comment" required></textarea> 
+  				</div>
+  				<button type="submit" class="btn btn-dark btn-lg">Send</button>
+			</form>
 				
 			</div>
+			
 
 		<?php	
 			include_once 'footer.php';

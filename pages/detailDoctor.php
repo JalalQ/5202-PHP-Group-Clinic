@@ -1,14 +1,12 @@
 <?php
-use PHP\classes\Database;
-use PHP\classes\doctorCrud;
+use WebApp2\Database\Database;
+use WebApp2\Database\DoctorPDO;
 
 require_once 'vendor/autoload.php';
 
-//
-require_once 'classes/Database.php';
-require_once 'classes/doctorCrud.php';
 
-$d = new doctorCrud();
+
+$d = new DoctorPDO();
 $id= $_POST['id'];
 
 $dr = $d->getdoctorById($id, Database::getDb());

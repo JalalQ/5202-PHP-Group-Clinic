@@ -1,5 +1,5 @@
 <?php
-use PHP\Classes\{Database,Faq};
+use WebApp2\Database\{Database,FaqPDO};
 require_once 'vendor/autoload.php';
 
 $dbcon = Database::getDb();
@@ -9,7 +9,7 @@ $question = $answer = "";
 if(isset($_POST['updFaq'])){
     $id = $_POST['id'];
 
-    $f = new Faq();
+    $f = new FaqPDO();
     $faq = $f->getFaqById($dbcon, $id);
 
     $question =  $faq->question;

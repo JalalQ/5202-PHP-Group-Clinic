@@ -1,3 +1,13 @@
+<?php
+
+	use WebApp2\Database\{Database,PagePDO};
+	require_once 'vendor/autoload.php';
+
+
+	$PagePDO = new PagePDO();
+	$covidPage =$PagePDO->getPage('covid_risk_factors');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -28,32 +38,9 @@
 			include_once 'header.php';
         ?>
         <div> <a href="index.php?page=covid_questionnaire_symptoms" class="btn btn-link ">< Back</a></div>
-        <main class="content-wrapper container">
-
-        	<h1>COVID-19 questionnaire</h1>
-            
-        	<p class="question"><strong>Are you in any of these at-risk groups?</strong></p>
-
-        	<div class="answers-wrapper">
-
-        		<ul>
-        			<li>Getting treatment that compromises (weakens) your immune system</li>
-        			<li>Having a condition that compromises (weakens) your immune system</li>
-        			<li>Having a chronic (long-lasting) health condition</li>
-        			<li>Regularly going to a hospital or health care setting for a treatment</li>
-        		</ul>
-
-        	</div>
-
-        	<div class="choices-wrapper">
-
-        		<a href="index.php?page=covid_questionnaire_fail_result" class="btn btn-secondary btn-lg">yes</a> 
-        		<a href="index.php?page=covid_questionnaire_exposure" class="btn btn-secondary btn-lg">no</a>
-        		
-        	</div>        	
-
-	    </main>
+        
 		    <?php	
+		        echo $covidPage->content;
 				include_once 'footer.php';
 			?>
 		    <!-- Script Source Files -->

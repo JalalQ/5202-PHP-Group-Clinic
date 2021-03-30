@@ -1,6 +1,6 @@
 <?php
 
-namespace PHP\Classes;
+namespace WebApp2\Database;
 
 class Database {
 

@@ -1,12 +1,12 @@
 <?php
-use PHP\Classes\{Database,Faq};
+use WebApp2\Database\{Database,FaqPDO};
 require_once 'vendor/autoload.php';
 
 if(isset($_POST['id'])){
     $id = $_POST['id'];
     $dbcon = Database::getDb();
 
-    $f = new Faq();
+    $f = new FaqPDO();
     $faq = $f->deleteFaq($dbcon, $id);
     if($faq){
         //$deleteMsg = "Deleted successfully.";

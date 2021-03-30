@@ -1,3 +1,12 @@
+<?php
+
+	use WebApp2\Database\{Database,PagePDO};
+	require_once 'vendor/autoload.php';
+
+
+	$PagePDO = new PagePDO();
+	$covidPage =$PagePDO->getPage('covid_exposure');
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -28,21 +37,9 @@
 			include_once 'header.php';
         ?>
         <div> <a href="index.php?page=covid_questionnaire_risk_factors" class="btn btn-link ">< Back</a></div>
-        <main class="content-wrapper container">
-
-        	<h1>COVID-19 questionnaire</h1>
-            
-        	<p class="question"><strong>In the last 14 days, have you been identified as a “close contact” of someone who currently has COVID-19?</strong></p>
-
-        	<div class="choices-wrapper">
-
-        		<a href="index.php?page=covid_questionnaire_fail_result" class="btn btn-secondary btn-lg">yes</a> 
-        		<a href="index.php?page=covid_questionnaire_alert" class="btn btn-secondary btn-lg">no</a>
-        		
-        	</div>        	
-
-	    </main>
+        
 		    <?php	
+		        echo $covidPage->content;
 				include_once 'footer.php';
 			?>
 		    <!-- Script Source Files -->

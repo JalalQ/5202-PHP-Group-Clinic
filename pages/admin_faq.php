@@ -1,11 +1,11 @@
 <?php
-use PHP\Classes\{Database,Faq};
+use WebApp2\Database\{Database,FaqPDO};
 require_once 'vendor/autoload.php';
 
 $dbcon = Database::getDb();
 
 //Generate a table
-$newFaqs = new Faq();
+$newFaqs = new FaqPDO();
 $faqs = $newFaqs->getFaqs($dbcon);
 
 //Add s new faq

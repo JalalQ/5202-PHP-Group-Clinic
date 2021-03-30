@@ -1,6 +1,6 @@
 <?php
 
-use PHP\Classes\{Database,PagePDO};
+use WebApp2\Database\{Database,PagePDO};
 require_once 'vendor/autoload.php';
 
 

@@ -1,3 +1,12 @@
+<?php
+
+	use WebApp2\Database\{Database,PagePDO};
+	require_once 'vendor/autoload.php';
+
+
+	$PagePDO = new PagePDO();
+	$covidPage =$PagePDO->getPage('covid_severe_symptoms');
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -27,44 +36,23 @@
 			include_once 'header.php';
         ?>
         <div> <a href="index.php?page=covid_questionnaire_start" class="btn btn-link ">< Back</a></div>
-        <main class="content-wrapper container">
+       
+	    <?php	
+	        echo $covidPage->content;
+			include_once 'footer.php';
+		?>
+	    <!-- Script Source Files -->
 
-        	<h1>COVID-19 questionnaire</h1>
-            
-        	<p class="question"><strong>Are you currently experiencing any of these issues?</strong></p>
+		<!-- jQuery -->
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<!-- Bootstrap 4.5 JS -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Popper JS -->
+		<script src="js/popper.min.js"></script>
+		<!-- Font Awesome -->
+		<script src="js/all.min.js"></script>
 
-        	<div class="answers-wrapper">
-        		<ul>
-        			<li>Severe difficulty breathing (struggling for each breath, can only speak in single words)</li>
-        			<li> Severe chest pain (constant tightness or crushing sensation)</li>
-        			<li>Feeling confused or unsure of where you are</li>
-        			<li>Losing consciousness</li>
-        		</ul>        		
-        	</div>
-
-        	<div class="choices-wrapper">
-
-        		<a href="index.php?page=covid_questionnaire_fail_result" class="btn btn-secondary btn-lg">yes</a> 
-        		<a href="index.php?page=covid_questionnaire_symptoms" class="btn btn-secondary btn-lg">no</a>
-        		
-        	</div>
-
-	    </main>
-		    <?php	
-				include_once 'footer.php';
-			?>
-		    <!-- Script Source Files -->
-
-			<!-- jQuery -->
-			<script src="js/jquery-3.5.1.min.js"></script>
-			<!-- Bootstrap 4.5 JS -->
-			<script src="js/bootstrap.min.js"></script>
-			<!-- Popper JS -->
-			<script src="js/popper.min.js"></script>
-			<!-- Font Awesome -->
-			<script src="js/all.min.js"></script>
-
-			<!-- End Script Source Files -->
+		<!-- End Script Source Files -->
 
 
 	  

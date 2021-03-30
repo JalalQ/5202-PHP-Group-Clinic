@@ -1,12 +1,10 @@
 <?php
-use PHP\classes\Database;
-use PHP\classes\doctorCrud;
+use WebApp2\Database\Database;
+use WebApp2\Database\DoctorPDO;
 
 require_once 'vendor/autoload.php';
 
-//
-require_once 'classes/Database.php';
-require_once 'classes/doctorCrud.php';
+
 
 
 
@@ -23,7 +21,7 @@ if(isset($_POST['confirmAdd'])){
     $personal = $_POST['personal'];
 
     $dbcon = Database::getDb();
-    $doctor_update = new doctorCrud();
+    $doctor_update = new DoctorPDO();
 
     $count = $doctor_update->addDoctor($first_name, $last_name,
         $cpso_reg, $email, $education, $expertise, $biography, $personal, $dbcon);

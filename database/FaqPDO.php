@@ -1,6 +1,6 @@
 <?php
-namespace PHP\Classes;
-  class Faq {
+namespace WebApp2\Database;
+  class FaqPDO {
 
      //get all faq
      public function getFaqs($dbcon) {
