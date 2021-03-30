@@ -47,6 +47,10 @@ nav a:hover {
     font-size: 1.1rem;
 }
 
+li >li {
+    display: block;
+}
+
 /*============= FOOTER =============*/
 footer {
     background: #383838;

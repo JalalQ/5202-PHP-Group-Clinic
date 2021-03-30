@@ -1,3 +1,12 @@
+<?php
+
+	use WebApp2\Database\{Database,CovidResultPDO};
+	require_once 'vendor/autoload.php';
+
+
+	$covidPDO = new CovidResultPDO();
+	$covidResult =$covidPDO->getCovidResult('success');
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -43,13 +52,10 @@
         			Dear fullname,
         			</strong>
         		</p>
-        		<p>
-        			<strong>
-        			Based on your answers, you do not appear to have any symptoms or to be part of an at-risk group.
-        			</strong>
-        		</p>
-        		So, you can come to our hospital for your appointment. To protect your community and the health care system do not forget to wear a face covering or mask and  keep a physical distance from others.
-        		</p>
+        		<?php	
+		        	echo $covidResult->details;
+				
+			    ?>
         	</div>
 
         	<div class="choices-wrapper">

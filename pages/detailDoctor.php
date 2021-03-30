@@ -32,28 +32,11 @@ $dr = $d->getdoctorById($id, Database::getDb());
 
 </head>
 
-<header>
-    <div class="wrapper">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark cyan">
-                <a class="navbar-brand font-bold logo" href="index.php?page=home">QC/HC</a>
+<?php
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link active" href="index.php?page=home"></i> Home </a>
-                        </li>
-                    </ul>
-                </div>
-
-            </nav>
-        </div>
-    </div>
-</header>
+    include_once 'header.php';
+            
+?>
 
 
 <div class="wrapper">
