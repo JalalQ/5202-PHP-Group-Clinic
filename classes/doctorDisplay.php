@@ -8,8 +8,6 @@ class doctorDisplay
 {
 
     public function getAllDoctors($dbcon){
-
-
         $sql = "SELECT * FROM doctor";
         $pdostm = $dbcon->prepare($sql);
         $pdostm->execute();
