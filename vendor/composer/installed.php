@@ -6,7 +6,10 @@
     'aliases' => 
     array (
     ),
+
     'reference' => 'f3babaf8f0915cf75001c75601229e3dbf759ca8',
+
+
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +21,11 @@
       'aliases' => 
       array (
       ),
+<<<<<<< HEAD
       'reference' => 'f3babaf8f0915cf75001c75601229e3dbf759ca8',
+=======
+      'reference' => '3ed2b71474a93d262aff24b8cd2123ae666929b6',
+>>>>>>> doctors-services
     ),
     'doctrine/lexer' => 
     array (

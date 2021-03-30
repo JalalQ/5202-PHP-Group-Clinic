@@ -18,6 +18,9 @@
                             <a class="nav-link active" href="index.php?page=indexServices"></i> Services </a>
                         </li>
                         <li class="nav-item active">
+                            <a class="nav-link active" href="index.php?page=indexDoctor"></i> Doctor </a>
+                        </li>
+                        <li class="nav-item active">
                             <a class="nav-link active" href="index.php?page=faq"></i> FAQ </a>
                         </li>
                         <li class="nav-item active">
