@@ -44,6 +44,10 @@ if (isset($_POST['submit'])) {
 
 
 </head>
+   <?php
+
+            include_once 'header.php';
+            ?>
 <section>
     <div class="container">
         <div class="row justify-content-center">
@@ -104,6 +108,12 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 </section>
+<?php
+
+require_once 'footer.php';
+?>
+
+?>
 <!-- Script Source Files -->
 
 <!-- jQuery -->
