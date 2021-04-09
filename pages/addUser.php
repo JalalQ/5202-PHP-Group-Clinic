@@ -2,13 +2,11 @@
 
 session_start();
 
-
-use PHP\Classes\Database;
-use PHP\Classes\User;
+use WebApp2\Database\{Database,User};
 
 require_once 'vendor/autoload.php';
-require_once 'Classes/Database.php';
-require_once 'Classes/User.php';
+
+
 
 if (isset($_POST['submit'])) {
     $fname = $_POST['f_name'];
@@ -91,7 +89,7 @@ if (isset($_POST['submit'])) {
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input">
-                                    I Read and Accept <a class="text-h3" href="">Terms and Conditions</a>
+                                    I Read and Accept <a class="text-h3 text-dark" href="">Terms and Conditions</a>
                                 </label>
                             </div>
 
