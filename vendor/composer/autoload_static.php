@@ -4,14 +4,14 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83
+class ComposerStaticInit6eff48b3c7de4054762bce9c523a35e7
 {
     public static $files = array (
-        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
-        'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
 
@@ -29,6 +29,10 @@ class ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Polyfill\\Iconv\\' => 23,
+        ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'E' => 
         array (
@@ -73,6 +77,10 @@ class ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -84,15 +92,16 @@ class ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit94ab6673d89eff9701fe1d38ac009c83::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6eff48b3c7de4054762bce9c523a35e7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6eff48b3c7de4054762bce9c523a35e7::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit6eff48b3c7de4054762bce9c523a35e7::$classMap;
 
         }, null, ClassLoader::class);
     }
