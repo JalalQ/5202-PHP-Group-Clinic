@@ -27,11 +27,11 @@ require_once 'vendor/autoload.php';
                     <div class="box  text-center">
                         <h1>Are you sure you would like to delete this user?</h1>
                         <div class=" container  my-4">
-                            <form name="delete" method="post" action="delete.php">
+                            <form name="delete" method="post" action="index.php?page=deletedUser">
                                 <input type="hidden" name="id" value="#">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
-                            <a class="btn btn-secondary my-0" href="admin_dashboard.php">Return</a>
+                            <a class="btn btn-secondary my-0" href="index.php?page=admin_dashboard">Return</a>
                         </div>
 
                     </div>

@@ -23,7 +23,7 @@
                 <div class="row " >
                     <div class="col text-center">
                         <h1 class="py-3">User Added</h1>
-                        <a class="btn btn-secondary" href="#">Return</a>
+                        <a class="btn btn-secondary" href="index.php?page=admin_dashboard">Return</a>
                     </div>
                 </div>
             </div>

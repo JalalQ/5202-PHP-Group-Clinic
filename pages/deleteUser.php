@@ -16,7 +16,7 @@ if (isset($_POST['id'])) {
     $s = new User();
     $count = $s->deleteUser($id, $db);
     if ($count) {
-        header("Location: deletedUser.php");
+        header("Location: index.php?page=deletedUser");
     } else {
         echo " problem deleting";
     }
