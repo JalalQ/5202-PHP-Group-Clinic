@@ -6,10 +6,7 @@
     'aliases' => 
     array (
     ),
-
-    'reference' => 'f3babaf8f0915cf75001c75601229e3dbf759ca8',
-
-
+    'reference' => '0bef935a8f357dc93fd47d77266b7e93882961e8',
     'name' => '__root__',
   ),
   'versions' => 
@@ -21,11 +18,7 @@
       'aliases' => 
       array (
       ),
-<<<<<<< HEAD
-      'reference' => 'f3babaf8f0915cf75001c75601229e3dbf759ca8',
-=======
-      'reference' => '3ed2b71474a93d262aff24b8cd2123ae666929b6',
->>>>>>> doctors-services
+      'reference' => '0bef935a8f357dc93fd47d77266b7e93882961e8',
     ),
     'doctrine/lexer' => 
     array (
@@ -38,12 +31,21 @@
     ),
     'egulias/email-validator' => 
     array (
-      'pretty_version' => '3.1.0',
-      'version' => '3.1.0.0',
+      'pretty_version' => '3.1.1',
+      'version' => '3.1.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '62c3b73c581c834885acf6e120b412b76acc495a',
+      'reference' => 'c81f18a3efb941d8c4d2e025f6183b5c6d697307',
+    ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.4.0',
+      'version' => '6.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '050d430203105c27c30efd1dce7aa421ad882d01',
     ),
     'swiftmailer/swiftmailer' => 
     array (
