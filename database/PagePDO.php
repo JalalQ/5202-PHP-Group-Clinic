@@ -1,5 +1,5 @@
 <?php
-namespace PHP\Classes;
+namespace WebApp2\Database;
  class PagePDO{
      private $dbcon;
         function __construct(){
@@ -19,3 +19,4 @@ namespace PHP\Classes;
 
 
  }
+ 

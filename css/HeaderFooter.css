@@ -12,6 +12,7 @@ Dark green = #276678*/
 html {
     font-family: "Roboto", sans-serif;
 }
+
 /*============= TOP BAR HEADER =============*/
 header
 {
@@ -45,6 +46,10 @@ nav a:hover {
 .top-bar a {
     text-decoration: none;
     font-size: 1.1rem;
+}
+
+li >li {
+    display: block;
 }
 
 /*============= FOOTER =============*/

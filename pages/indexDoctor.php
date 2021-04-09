@@ -1,3 +1,16 @@
+<?php
+use WebApp2\Database\Database;
+use WebApp2\Database\DoctorPDO;
+
+require_once 'vendor/autoload.php';
+
+
+
+$d = new DoctorPDO();
+$doctorsList = $d->getAllDoctors(Database::getDb());
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
