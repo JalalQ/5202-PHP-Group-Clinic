@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     $user = $u->addUser($fname, $lname, $username, $email, $password, $db);
 
     if (isset($user)) {
-        header("Location: confirm.php");
+        header("Location: confirmAdd.php");
     } else {
         echo "Error Adding User!";
     }
