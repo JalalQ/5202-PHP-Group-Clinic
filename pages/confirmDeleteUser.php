@@ -31,7 +31,7 @@ require_once 'vendor/autoload.php';
                                 <input type="hidden" name="id" value="#">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
-                            <a class="btn btn-secondary my-0" href="#">Return</a>
+                            <a class="btn btn-secondary my-0" href="admin_dashboard.php">Return</a>
                         </div>
 
                     </div>

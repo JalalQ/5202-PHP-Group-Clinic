@@ -23,7 +23,7 @@
                 <div class="row " >
                     <div class="col text-center">
                         <h1 class="py-3">User Deleted</h1>
-                        <a class="btn btn-secondary" href="#">Return</a>
+                        <a class="btn btn-secondary" href="admin_dashboard.php">Return</a>
                     </div>
                 </div>
             </div>
