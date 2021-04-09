@@ -18,14 +18,15 @@
           <div class="row">
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="img/services/complain.jpg" alt="Complaints, Feedback and Compliment" > <!--style="width:200px;height:200px;"-->
+                <img class="card-img-top" src="img/services/chiro.jpg" alt="Complaints, Feedback and Compliment" > <!--style="width:200px;height:200px;"-->
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="btn btn-primary my-2">Quality Assurance</a>
+                        <a href="#" class="btn btn-primary my-2">Chiropractic</a>
                     </div>
                     <p class="card-text">
-                      Have a complain, feedback or compliment which you would like to share with us. Our Quality Assurance
-                      department is here to help you.
+                        Chiropractic care is a patient-centred, hands-on discipline that focuses on the spine,
+                        muscles, joints and nervous system. Chiropractors are regulated health professionals and are
+                        designated as primary-contact practitioners which means you do not require a referral to visit.
                     </p>
 
                 </div>
@@ -36,10 +37,12 @@
                       <img class="card-img-top" src="img/services/spiritual.jpg" alt="Spiritual Care" > <!--style="width:200px;height:200px;"-->
                       <div class="card-body">
                           <div class="d-flex justify-content-between align-items-center">
-                              <a href="#" class="btn btn-primary my-2">Spiritual Care</a>
+                              <a href="#" class="btn btn-primary my-2">Physiotherapy</a>
                           </div>
                           <p class="card-text">
-                              Our chaplain office provide spiritual care and support to patients of religious beliefs.
+                              Physiotherapists help people affected by injury, illness or disability through
+                              prescription of movement and exercise, manual therapy, education and modaties when indicated.
+                              The goal for physiotherapy is to help patients manage their pain as well as prevent disease.
                           </p>
 
                       </div>
@@ -47,14 +50,16 @@
               </div>
               <div class="col-md-4">
                   <div class="card mb-4 box-shadow">
-                      <img class="card-img-top" src="img/services/translation.jpg" alt="Interpreter Translation" > <!--style="width:200px;height:200px;"-->
+                      <img class="card-img-top" src="img/services/acu.jpg" alt="Interpreter Translation" > <!--style="width:200px;height:200px;"-->
                       <div class="card-body">
                           <div class="d-flex justify-content-between align-items-center">
-                              <a href="#" class="btn btn-primary my-2">Translated document/ Interpreters</a>
+                              <a href="#" class="btn btn-primary my-2">Acupuncture</a>
                           </div>
                           <p class="card-text">
-                              We are able to provide translated documents on the various services offered by the hospital.
-                              We are also provide you with an interpreters, subject to availability.
+                              Acupuncture is a nerve stimulation technique that uses fine needles and
+                              sometimes mild electrical stimulation for a therapeutic purpose. Acupuncture can be
+                              offered from a Traditional Chinese Medicine (TCM) approach or from a Contemporary
+                              Medical approach.
                           </p>
 
                       </div>
