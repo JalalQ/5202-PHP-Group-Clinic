@@ -19,6 +19,7 @@ require_once 'vendor/autoload.php';
 
 
 </head>
+<?php include "header.php";?>
 <section>
     <div class="container">
         <div class="row justify-content-center">
@@ -41,6 +42,9 @@ require_once 'vendor/autoload.php';
         </div>
     </div>
 </section>
+<?php
+include_once 'footer.php.php';
+?>
 <!-- jQuery -->
 <script src="js/jquery-3.5.1.min.js"></script>
 <!-- Bootstrap 4.5 JS -->

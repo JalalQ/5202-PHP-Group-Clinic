@@ -16,6 +16,9 @@
 
 
 </head>
+<?php
+include_once 'header.php';
+?>
 <section>
     <div class="container col-md-5">
         <div class="row box justify-content-center">
@@ -29,6 +32,9 @@
             </div>
         </div>
     </div>
+    <?php
+    include_once 'footer.php';
+    ?>
 <!-- jQuery -->
 <script src="js/jquery-3.5.1.min.js"></script>
 <!-- Bootstrap 4.5 JS -->
