@@ -40,10 +40,10 @@ Class MailManager{
 
 	}
  // this function sends an email to the support staff
-	Public function send_Message($subject, $content, $sender){
+	Public function send_Message($subject, $content, $senderName,$senderEmail){
 		// Create a message
 		$message = new \Swift_Message($subject);
-		$message ->setFrom([$sender->email => $sender->username]);
+		$message ->setFrom([$senderEmail=> $senderName]);
 		$message ->setTo(['webbapp2@yahoo.com' => 'QC/HR']);
 		$type = $message->getHeaders()->get('Content-Type');
     $type->setValue('text/html');
@@ -51,7 +51,7 @@ Class MailManager{
     //set the message content
     $message ->setBody($content);
     //echo $content;
-    $result = $this->mailer->send($message);		
+    $result = $this->mailer->send($message);
 	}
 
     /**
