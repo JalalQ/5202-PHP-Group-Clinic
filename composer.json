@@ -1,7 +1,9 @@
 {
     "require": {
         "swiftmailer/swiftmailer" : "^6.0",
-      "ext-pdo": "*"
+        "phpmailer/phpmailer": "^6.2",
+        "ext-pdo": "*",
+        "ext-json": "*"
     },
 
     "autoload": {

@@ -1,3 +1,15 @@
+<?php
+use WebApp2\Database\{Database, AdminHelpdeskPDO};
+require_once 'vendor/autoload.php';
+
+
+$dbcon = Database::getDb();
+$new = new AdminHelpdeskPDO();
+$questioner = $new->getAllInfoForQuestioner($dbcon);
+//var_dump($inq->user);
+$responder = $new->getAllInfoForResponder($dbcon);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,46 +39,42 @@
 
                     <h1 class="my-3">Helpdesk</h1>
 
-                    <!--HELPDESK-->
-                    <div class="mb-5" id="section_helpdesk">
-                        <div class="list-group gap-2">
-                            <a href="#helpMsg" class="list-group-item section_helpdesk_item" aria-current="true" id="link1">
-                                2021-02-21 11:00 Patient Name New
-                            </a>
-                            <a href="#helpMsg" class="list-group-item section_helpdesk_item">
-                                2021-02-21 11:15 Patient Name New
-                            </a>
-                            <a href="#helpMsg" class="list-group-item section_helpdesk_item">
-                                2021-02-21 13:32 Patient Name New
-                            </a>
-                            <a href="#helpMsg" class="list-group-item section_helpdesk_item">
-                                2021-02-21 14:45 Doctor Name New
-                            </a>
-                            <a href="#helpMsg" class="list-group-item section_helpdesk_item">
-                                2021-02-21 16:20 Patient Name New
-                            </a>
+                    <!--INQUIRIES-->
+                    <div class="card p-5 mb-5 shadow-sm">
+                        <div id="section_helpdesk">
+                            <h2 class="mb-3">All Messages</h2>
+                            <div class="accordion" id="accordionExample">
+                                <?php foreach($questioner as $q) { ?>
+                                    <div class="card">
+                                        <div class="card-header card-bg section_helpdesk_item" id="heading<?= $q->id; ?>">
+                                            <h2 class="mb-0">
+                                                <button class="btn btn-link btn-block text-left section_helpdesk_btn" type="button" data-toggle="collapse" data-target="#collapse<?= $q->id; ?>" aria-expanded="true" aria-controls="collapse<?= $q->id; ?>">
+                                                    <?= $q->id." ".$q->submitted_date." ".$q->firstname." ".$q->lastname." ".$q->status; ?>
+                                                </button>
+                                            </h2>
+                                        </div>
+
+                                        <!--MESSAGE OUTPUT-->
+                                        <div id="collapse<?= $q->id; ?>" class="collapse" aria-labelledby="heading<?= $q->id; ?>" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <p>Message: <?= $q->message; ?></p>
+                                                <?php foreach($responder as $r) {
+                                                    if($q->id == $r->id) {
+                                                        ?>
+                                                        <p>Reply: <?= $r->reply_message." (".$r->firstname." ".$r->lastname." ".$r->responded_date.")"; ?></p>
+                                                    <?php }} ?>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--END OF MESSAGE OUTPUT-->
+                                <?php } ?>
+                            </div>
                         </div>
-
-                        <!--MESSAGE OUTPUT-->
-                        <div class="my-3 px-3 py-3 card" id="helpMsg">
-                            <p>Name: Alex</p>
-                            <p>Subtitle: Inquiry</p>
-                            <p>Request Date: 2021-02-21 11:00</p>
-                            <p>Message: I am interested in physiotherapy treatment. But I am not sure which service is best for me....</p>
-
-                            <!-- REPLY FORM -->
-                            <form method="post" action="" name="helpForm">
-                                <div class="form-group">
-                                    <label for="reply">Reply Message: </label>
-                                    <textarea id="reply" name="reply" class="form-control"></textarea>
-                                </div>
-                                <input type="submit" class="btn btn-info" id="helpBtn" value="Reply to this message" />
-                            </form>
-                        </div>
-                        <!--END OF MESSAGE OUTPUT-->
-
+                        <!--END OF HELPDESK-->
                     </div>
-                    <!--END OF HELPDESK-->
+
+                </div>
             </main>
         </div>
 
@@ -86,8 +94,6 @@
         <script type="text/javascript" src="js/admin_dashboard.js"></script>
 
         <!-- End Script Source Files -->
-
-
     </body>
-</html>
 
+</html>
