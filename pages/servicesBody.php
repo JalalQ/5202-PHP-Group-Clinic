@@ -4,10 +4,9 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Services and Medical Department</h1>
+          <h1 class="jumbotron-heading">Services offered</h1>
           <p class="lead text-muted">
-              In addition to the core medical services offered at the hospital,
-              we also offer various supporting services.
+              The following are the main services offered at our centre.
           </p>
         </div>
       </section>
