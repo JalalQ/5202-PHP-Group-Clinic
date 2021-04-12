@@ -2,7 +2,7 @@
 
 use WebApp2\Database\{Database,PagePDO};
 require_once 'vendor/autoload.php';
-//require_once 'database/database.php';
+
 
 
 $PagePDO = new PagePDO();
