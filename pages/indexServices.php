@@ -1,3 +1,13 @@
+<?php
+
+use WebApp2\Database\{Database,PagePDO};
+require_once 'vendor/autoload.php';
+
+
+
+$PagePDO = new PagePDO();
+$servicesPage =$PagePDO->getPage('services');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +29,7 @@
 <?php
 
 include_once 'header.php';
-include_once 'servicesBody.php';
+echo $servicesPage->content;
 include_once 'footer.php';
 
 ?>
