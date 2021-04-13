@@ -9,7 +9,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item ">
-                            <a class="nav-link <?php echo ($_GET['page']==='home' || !isset($_GET['page']))? 'active' : '' ?>" href="index.php?page=home">Home </a> 
+                            <a class="nav-link <?php echo ($_GET['page']==='home' || !isset($_GET['page']))? 'active' : '' ?>" href="index.php?page=home">Home </a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link  <?php echo ($_GET['page']==='about_us')? 'active' : '' ?>" href="index.php?page=about_us"> About us </a>
@@ -30,7 +30,7 @@
                             <a class="nav-link <?php echo ($_GET['page']==='contact')? 'active' : '' ?>" href="index.php?page=contact"><i class="fa fa-envelope"></i> Contact us</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link <?php echo ($_GET['page']==='indexServices')? 'active' : '' ?>" href="index.php?page=home">Login</a>
+                            <a class="nav-link <?php echo ($_GET['page']==='indexServices')? 'active' : '' ?>" href="index.php?page=user_login">Login</a>
                         </li>
                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Profile </a>

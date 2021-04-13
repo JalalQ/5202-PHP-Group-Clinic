@@ -25,16 +25,17 @@ include_once 'header.php';
             <div class="col-md-12">
                 <div class="row " >
                     <div class="col text-center">
-                        <h1 class="py-3">User Added</h1>
-                        <a class="btn btn-secondary" href="index.php?page=admin_dashboard">Return</a>
+                        <h1 class="py-3">User Deleted</h1>
+                        <a class="btn btn-secondary" href="admin_dashboard.php">Return</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <?php
-    include_once 'footer.php';
-    ?>
+</section>
+<?php
+include_once 'header.php';
+?>
 <!-- jQuery -->
 <script src="js/jquery-3.5.1.min.js"></script>
 <!-- Bootstrap 4.5 JS -->
