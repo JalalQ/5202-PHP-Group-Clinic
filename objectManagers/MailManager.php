@@ -1,18 +1,14 @@
 <?php
 namespace WebApp2\ObjectManagers;
-
-require_once "../vendor/autoload.php";
-
-
 Class MailManager{
 
 	public $mailer;
   function __construct(){
 
     // Create the Transport
-		$transport = new \Swift_SmtpTransport('smtp.mail.yahoo.com', 587,'tls');
+		$transport = new \Swift_SmtpTransport('smtp.mail.yahoo.com',587,'tls');
 		$transport->setUsername('webbapp2@yahoo.com');
-		$transport->setPassword('pjqncuhsekjhvkmq');
+		$transport->setPassword('gjgzyuhuvzksmwsv');
 
 		// Create the Mailer using your created Transport
 		$this->mailer = new \Swift_Mailer($transport);
@@ -23,7 +19,7 @@ Class MailManager{
     /**
      * this function send a review request through email to a user.
      */
-	public function send_request_review($user)
+	public function sendRequestReview($user)
 	{
 		// Create a message
 		$message = new \Swift_Message('Invitation to share your experience');
@@ -40,16 +36,18 @@ Class MailManager{
 
 	}
  // this function sends an email to the support staff
-	Public function send_Message($subject, $content, $senderName,$senderEmail){
+	Public function sendContactMessage($subject, $content, $senderName,$senderEmail){
 		// Create a message
 		$message = new \Swift_Message($subject);
-		$message ->setFrom([$senderEmail=> $senderName]);
+		$message ->setFrom(['webbapp2@yahoo.com' => 'QC/HR']);
 		$message ->setTo(['webbapp2@yahoo.com' => 'QC/HR']);
 		$type = $message->getHeaders()->get('Content-Type');
     $type->setValue('text/html');
     $type->setParameter('charset', 'utf-8');
     //set the message content
-    $message ->setBody($content);
+    $message ->setBody($content ."<p>" . $senderName . "<br/>" . $senderEmail . "</p>");
+		//var_dump($senderEmail);
+		//var_dump($senderName);
     //echo $content;
     $result = $this->mailer->send($message);
 	}
@@ -162,6 +160,5 @@ Class MailManager{
 			return $message;
 	}
 }
-$m = new ReviewManager();
-$m->send_invitation(null);
+
 ?>

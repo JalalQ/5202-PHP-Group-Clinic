@@ -31,9 +31,13 @@ ul#contact-address li:last-child  {
 form#contact-form{
 	width: 60%;
 	margin-bottom: 1em;
+	margin-top: 1.5em;
 }
 form#contact-form span{
 	color: red;
+}
+form#contact-form div > span{
+	font-size: 0.8em;
 }
 
 form#contact-form label{
@@ -41,4 +45,7 @@ form#contact-form label{
 }
 div#map{
 	width: 55%;
+}
+.success_msg{
+	color:lightgreen;
 }
