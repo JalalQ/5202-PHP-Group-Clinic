@@ -1,5 +1,5 @@
 .content-wrapper{
-	color: black;	
+	color: black;
 	max-width: 1200px;
 	margin: auto;
 }
@@ -19,7 +19,10 @@ h1{
 p#updated-date, p#version{
 	margin: 0px;
 }
-
+.error_msg{
+	color: red;
+	font-size: 0.8em;
+}
 .questionaire-link-wrapper{
 	text-align: center;
 	margin: 1.5em;
@@ -36,7 +39,7 @@ p#updated-date, p#version{
 .choices-wrapper{
 	text-align: center;
 	margin: 1em;
-	
+
 }
 
 .choices-wrapper a, .choices-wrapper input[type="submit"]{
@@ -70,7 +73,7 @@ form#form-symptoms input[type="checkbox"]{
 }
 
 .fail-result-wrapper{
-	background-color: #ff7171;	
+	background-color: #ff7171;
 }
 
 .result-datetime{

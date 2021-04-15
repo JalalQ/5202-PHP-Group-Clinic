@@ -2,20 +2,25 @@
 	use WebApp2\Database\{Database,PagePDO};
 	require_once 'vendor/autoload.php';
 
-
+  $error_msg ="";
 	$PagePDO = new PagePDO();
 	$covidPage =$PagePDO->getPage('covid_symptoms');
 
-	if(isset($_POST['continue']) && isset($_POST['symptoms'])){
-		
-		if(count($_POST['symptoms'])== 1 && $_POST['symptoms'][0] == "none of the above"){
-			header("Location: index.php?page=covid_questionnaire_risk_factors");
-			exit;
+	if(isset($_POST['continue']) ){
+
+		if (isset($_POST['symptoms'])) {
+			if(count($_POST['symptoms'])== 1 && $_POST['symptoms'][0] == "none of the above"){
+				header("Location: index.php?page=covid_questionnaire_risk_factors");
+				exit;
+			}
+			else{
+
+				header("Location: index.php?page=covid_questionnaire_fail_result");
+				exit;
+			}
 		}
-		else{
-			
-			header("Location: index.php?page=covid_questionnaire_fail_result");
-			exit;
+		else {
+			$error_msg = "Please select what corresponds to your current situation !";
 		}
 	}
 ?>
@@ -29,7 +34,7 @@
 		<meta name="covid-19 questionnaire" description=" coronavirus self-assessment">
 	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>QC/HC - covid questionaire</title>
-		
+
 		<!-- Bootstrap 4.5 CSS -->
 		<link rel="stylesheet" href="library/bootstrap/bootstrap.min.css">
 		<!-- Style CSS -->
@@ -49,9 +54,13 @@
 
 			include_once 'header.php';
         ?>
-        <div> <a href="index.php?page=covid_questionnaire_severe_symptoms" class="btn btn-link ">< Back</a></div>
-
-		    <?php	
+        <div>
+					<a href="index.php?page=covid_questionnaire_severe_symptoms" class="btn btn-link ">< Back</a>
+				</div>
+				<div class=" content-wrapper error_msg">
+					<?= $error_msg ?>
+				</div>
+		    <?php
 		        echo $covidPage->content;
 				include_once 'footer.php';
 			?>
@@ -69,7 +78,7 @@
 			<!-- End Script Source Files -->
 
 
-	  
-		
+
+
 	</body>
 </html>
