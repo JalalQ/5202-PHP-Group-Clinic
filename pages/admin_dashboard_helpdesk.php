@@ -1,11 +1,18 @@
 <?php
-use WebApp2\Database\{Database, AdminHelpdeskPDO};
+session_start();
+use WebApp2\Database\{Database, AdminHelpdeskPDO, AdminAllUsersPDO};
 require_once 'vendor/autoload.php';
 
+if($_SESSION['user']->role !== "admin") {
+    header("location: index.php?page=user_login");
+}
+
+//get data from the database
 $dbcon = Database::getDb();
 $new = new AdminHelpdeskPDO();
-$questioner = $new->getAllInfoForQuestioner($dbcon);
-//var_dump($inq->user);
+$newUser = new AdminAllUsersPDO();
+$messages = $new->getAllInfoForQuestioner($dbcon);
+$patients = $newUser->getPatients($dbcon);
 $responder = $new->getAllInfoForResponder($dbcon);
 
 ?>
@@ -24,6 +31,7 @@ $responder = $new->getAllInfoForResponder($dbcon);
     <link rel="stylesheet" href="css/HeaderFooter.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/admin-style/admin_dashboard.css">
+    <link rel="stylesheet" href="css/admin-style/admin_sidebar.css">
 
 </head>
 
@@ -38,27 +46,28 @@ $responder = $new->getAllInfoForResponder($dbcon);
 
             <h1 class="my-3">Helpdesk</h1>
 
-            <!--INQUIRIES-->
             <div class="card p-5 mb-5 shadow-sm">
                 <div id="section_helpdesk">
                     <h2 class="mb-3">All Messages</h2>
+
+                    <!--MESSAGE LIST-->
                     <div class="accordion" id="accordionExample">
-                        <?php foreach($questioner as $q) { ?>
+                        <?php foreach($messages as $m) { ?>
                             <div class="list-group list-group-flush">
-                                <div class="list-group-item" id="heading<?= $q->id; ?>">
+                                <div class="list-group-item" id="heading<?= $m->id; ?>">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left helpdesk_btn" type="button" data-toggle="collapse" data-target="#collapse<?= $q->id; ?>" aria-expanded="true" aria-controls="collapse<?= $q->id; ?>">
-                                            <?= $q->id." ".$q->submitted_date." ".$q->firstname." ".$q->lastname." ".$q->status; ?>
+                                        <button class="btn btn-link btn-block text-left helpdesk_btn" type="button" data-toggle="collapse" data-target="#collapse<?= $m->id; ?>" aria-expanded="true" aria-controls="collapse<?= $m->id; ?>">
+                                            <?= $m->id." ".$m->submitted_date." ".$m->firstname." ".$m->lastname." ".$m->status; ?>
                                         </button>
                                     </h2>
                                 </div>
 
                                 <!--MESSAGE OUTPUT-->
-                                <div id="collapse<?= $q->id; ?>" class="collapse" aria-labelledby="heading<?= $q->id; ?>" data-parent="#accordionExample">
+                                <div id="collapse<?= $m->id; ?>" class="collapse" aria-labelledby="heading<?= $m->id; ?>" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        <p>Message: <?= $q->message; ?></p>
+                                        <p>Message: <?= $m->message; ?></p>
                                         <?php foreach($responder as $r) {
-                                            if($q->id == $r->id) {
+                                            if($m->id == $r->id) {
                                                 ?>
                                                 <p>Reply: <?= $r->reply_message." (".$r->firstname." ".$r->lastname." ".$r->responded_date.")"; ?></p>
                                             <?php }} ?>
@@ -90,7 +99,7 @@ $responder = $new->getAllInfoForResponder($dbcon);
 <!-- Font Awesome -->
 <script src="js/all.min.js"></script>
 <!--CUSTOM JS-->
-<script type="text/javascript" src="js/admin_dashboard.js"></script>
+<script type="text/javascript" src="js/admin_sidebar.js"></script>
 
 <!-- End Script Source Files -->
 </body>

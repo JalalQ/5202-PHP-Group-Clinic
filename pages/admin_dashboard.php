@@ -1,15 +1,17 @@
 <?php
 session_start();
 use WebApp2\Database\{Database, DoctorPDO, AdminAppointmentPDO, AdminHelpdeskPDO};
+use WebApp2\ObjectManagers\{MailManager, AdminMail};
 require_once 'vendor/autoload.php';
-require_once 'functions/AdminDashboard.php';
 
 date_default_timezone_set('America/Toronto');
 
+if($_SESSION['user']->role !== "admin") {
+    header("location: index.php?page=user_login");
+}
 
 //Get data from the data table
 $dbcon = Database::getDb();
-var_dump($_SESSION['user']->role);
 
 //Appointments data
 $newAppointments = new AdminAppointmentPDO();
@@ -23,10 +25,6 @@ $docs = $newDocs->getAllDoctors($dbcon);
 //Helpdesk data
 $newHelpdesk = new AdminHelpdeskPDO();
 $newInqs = $newHelpdesk->getNewInquiries($dbcon);
-//var_dump($newInqs);
-
-//Call Functions
-$getFunctions = new AdminDashboard();
 
 //When the reply button is clicked, send email to questioner's email address
 if(isset($_POST['addReply'])){
@@ -35,30 +33,33 @@ if(isset($_POST['addReply'])){
     } else {
         $reply = $_POST['reply'];
         $id = $_POST['id'];
-        $responder = 1; //get admin name from session info
+        $responder = $_SESSION['user']->id; //get admin name from session info
         $newReply = $newHelpdesk->addReply($dbcon, $id, $reply, $responder);
 
         if($newReply) {
             $username = $newInqs[0]->firstname . ' ' . $newInqs[0]->lastname;
 
-            // Create the Transport
-            $transport = new \Swift_SmtpTransport('smtp.googlemail.com', 587,'tls');
-            $transport->setUsername('');
-            $transport->setPassword('');
+            //$mailManager = new MailManager();
+            $transport = new \Swift_SmtpTransport('smtp.mail.yahoo.com', 587,'tls');
+            $transport->setUsername('webbapp2@yahoo.com');
+            $transport->setPassword('pjqncuhsekjhvkmq');
 
             // Create the Mailer using your created Transport
             $mailer = new \Swift_Mailer($transport);
 
             // Create a message
+            $reminder = new AdminMail();
             $message = new \Swift_Message('QC/HC Helpdesk');
-            $message->setFrom(['' => 'QC/HR']);
+            $message->setFrom(['webbapp2@yahoo.com' => 'QC/HR']);
             $message->setTo([$newInqs[0]->email => $username]);
             $type = $message->getHeaders()->get('Content-Type');
             $type->setValue('text/html');
             $type->setParameter('charset', 'utf-8');
+
             //generate the page content
-            $content = $getFunctions->content_helpdesk($username, $reply);
+            $content = $reminder->content_inquiry($username, $reply);
             $message->setBody($content);
+
             //echo $content;
             $result = $mailer->send($message);
             $newInqs = $newHelpdesk->getNewInquiries($dbcon);
@@ -81,6 +82,7 @@ if(isset($_POST['addReply'])){
     <link rel="stylesheet" href="css/HeaderFooter.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/admin-style/admin_dashboard.css">
+    <link rel="stylesheet" href="css/admin-style/admin_sidebar.css">
 
 </head>
 
@@ -242,6 +244,7 @@ if(isset($_POST['addReply'])){
 <script src="js/all.min.js"></script>
 <!--CUSTOM JS-->
 <script type="text/javascript" src="js/admin_dashboard.js"></script>
+<script type="text/javascript" src="js/admin_sidebar.js"></script>
 
 <!-- End Script Source Files -->
 

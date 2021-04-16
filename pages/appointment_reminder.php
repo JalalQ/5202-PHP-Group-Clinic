@@ -1,44 +1,51 @@
 <?php
+session_start();
 use WebApp2\Database\{Database, AdminAppointmentPDO};
+use WebApp2\ObjectManagers\MailManager;
 require_once 'vendor/autoload.php';
 date_default_timezone_set('America/Toronto');
+
+if($_SESSION['user']->role !== "admin") {
+    header("location: index.php?page=user_login");
+}
 
 $dbcon = Database::getDb();
 $newAppointments = new AdminAppointmentPDO();
 $appos = $newAppointments->getAllAppointmentsInfo($dbcon);
 
-$nextDay = date('Y-m-d', strtotime(' +1 day'));
-//var_dump($nextDay);
+//Get tomorrow's appointment
+$nextday = date('Y-m-d', strtotime(' +1 day'));
+$apposTomorrow = $newAppointments->getAllAppointmentsTomorrow($dbcon, $nextday);
+//var_dump($apposTomorrow);
 
-$i = 0;
-while($i < count($appos) ){
-    if($appos[$i]->date = $nextDay){
-        $patientName = $appos[$i]->firstname.' '.$appos[$i]->lastname;
-        $docName = $appos[$i]->first_name.' '.$appos[$i]->last_name;
+if($apposTomorrow) {
+    foreach ($apposTomorrow as $a) {
+        $patientName = $a->firstname . ' ' . $a->lastname;
+        $docName = $a->first_name . ' ' . $a->last_name;
 
-        // Create the Transport
-        $transport = new \Swift_SmtpTransport('smtp.googlemail.com', 587,'tls');
-        $transport->setUsername('');
-        $transport->setPassword('');
+        //$mailManager = new MailManager();
+        $transport = new \Swift_SmtpTransport('smtp.mail.yahoo.com', 587, 'tls');
+        $transport->setUsername('webbapp2@yahoo.com');
+        $transport->setPassword('pjqncuhsekjhvkmq');
 
         // Create the Mailer using your created Transport
         $mailer = new \Swift_Mailer($transport);
 
         // Create a message
         $message = new \Swift_Message('QC/HC Appointment Reminder');
-        $message ->setFrom(['' => 'QC/HR']);
-        $message ->setTo([$appos[$i]->email => $patientName]);
+        $message->setFrom(['webbapp2@yahoo.com' => 'QC/HR']);
+        $message->setTo([$a->email => $patientName]);
         $type = $message->getHeaders()->get('Content-Type');
         $type->setValue('text/html');
         $type->setParameter('charset', 'utf-8');
         //generate the page content
-        $content = content_reminder($patientName, $docName, $appos[$i]->date, $appos[$i]->time_slot);
-        $message ->setBody($content);
+        $content = content_reminder($patientName, $docName, $a->date, $a->time_slot);
+        $message->setBody($content);
         //echo $content;
         $result = $mailer->send($message);
     }
-    $i++;
 }
+
 function content_reminder($patientName, $docName, $date, $time) {
     $reminderMsg = "<!DOCTYPE html>
 <html lang='en'>
@@ -109,7 +116,7 @@ function content_reminder($patientName, $docName, $date, $time) {
 <main class='content-wrapper'>
     <h1>Appointment Reminder</h1>
     <p>Dear. $patientName</p>
-    <p>This is a friendly reminder for your appointment with <span class='info'>$docName</span> on <span class='info'>$date / </span><span class='info'>$time</span>. Please try to arrive 15 minutes early to fill out the intake form if this is your first visit.</p>
+    <p>This is a friendly reminder for your appointment with <span class='info'>Dr. $docName</span> on <span class='info'>$date / </span><span class='info'>$time</span>. Please try to arrive 15 minutes early to fill out the intake form if this is your first visit.</p>
     <p>If you would like to cancel or reschedule, please contact us at 705-123-4567. Otherwise, we look forward to seeing you. Have a wonderful day!</p>
     <p>Warm regards,</p>
     <p>QC/HC</p>

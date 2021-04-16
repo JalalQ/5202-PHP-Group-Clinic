@@ -30,10 +30,6 @@ class ComposerStaticInit96fb858ef8de228f02b3d739aae573c0
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Polyfill\\Iconv\\' => 23,
         ),
-        'P' => 
-        array (
-            'PHPMailer\\PHPMailer\\' => 20,
-        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -77,10 +73,6 @@ class ComposerStaticInit96fb858ef8de228f02b3d739aae573c0
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
         ),
-        'PHPMailer\\PHPMailer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
-        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -92,6 +84,7 @@ class ComposerStaticInit96fb858ef8de228f02b3d739aae573c0
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
     );
 

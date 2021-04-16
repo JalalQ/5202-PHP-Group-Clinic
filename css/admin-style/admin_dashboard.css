@@ -3,10 +3,10 @@ CONTENTS
 
 * 1.COLORS
 * 2.GENERAL
-* 3.SIDEBAR
-* 4.3 COLUMNS
-* 5.APPOINTMENTS
-* 6.HELPDESK
+* 3.3 COLUMNS
+* 4.APPOINTMENTS
+* 5.HELPDESK
+* 6.MEDIA QUERY
 
 */
 
@@ -39,31 +39,7 @@ main {
 .detail-links:active {
     color: #a7c5eb;
 }
-/* 3.SIDEBAR */
-#sidebar_nav {
-    background-color: rgba(112,159,176,.1);
-    box-shadow: 2px 0 1px -2px #413c69;
-}
-.sidebar_item:link,
-.sidebar_item:visited {
-    color: #413c69;
-}
-.sidebar_item:hover,
-.sidebar_item:active {
-    color: #a7c5eb;
-}
-.icons {
-    font-size: 1.5rem;
-}
-#sidebar_toggle_btn {
-    cursor: pointer;
-}
-#sidebar_toggle_menu {
-    background-color: transparent;
-    position: unset;
-    border: none;
-}
-/* 4.3 COLUMNS */
+/* 3.3 COLUMNS */
 #card_col-3 {
     margin: 0;
 }
@@ -106,7 +82,7 @@ main {
 #card_doctors a:active {
     color: #a7c5eb;
 }
-/* 5.APPOINTMENTS */
+/* 4.APPOINTMENTS */
 .todays-calendar {
     border: 1px solid black;
     border-radius: 4px;
@@ -119,10 +95,11 @@ main {
     background-color: #fff;
     font-size: 1rem;
 }
-/* 6.HELPDESK */
+/* 5.HELPDESK */
 .helpdesk_btn{
     color: #413c69;
 }
+/* 6.MEDIA QUERY */
 @media only screen and (max-width: 424px) {
     .calendar-monthly {
         font-size: .8rem;
