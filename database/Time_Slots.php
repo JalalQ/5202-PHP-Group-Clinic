@@ -12,7 +12,16 @@ class Time_Slots
         $pdostm = $dbcon->prepare($sql);
         $pdostm->execute();
 
-        $doctors = $pdostm->fetchAll(\PDO::FETCH_OBJ);
-        return $doctors;
+        $slots = $pdostm->fetchAll(\PDO::FETCH_OBJ);
+        return $slots;
+    }
+
+    public function getTimebyId($dbcon, $id){
+        $sql = "SELECT * FROM time_slot where id = :id";
+        $pdostm = $dbcon->prepare($sql);
+        $pdostm->bindParam(':id', $id);
+        $pdostm->execute();
+        $slots = $pdostm->fetchAll(\PDO::FETCH_OBJ);
+        return $slots;
     }
 }

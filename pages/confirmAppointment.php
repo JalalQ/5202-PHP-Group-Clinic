@@ -4,15 +4,45 @@ session_start();
 
 use WebApp2\Database\Database;
 use WebApp2\Database\Appointment;
+use WebApp2\Database\User;
+use WebApp2\Database\Time_Slots;
+use WebApp2\Database\Days;
+use WebApp2\Database\DoctorPDO;
 
 require_once 'database/Database.php';
+require_once 'database/Time_Slots.php';
+require_once 'database/Days.php';
 require_once 'database/Appointment.php';
+require_once  'database/User.php';
+require_once 'database/DoctorPDO.php';
 
-    $id = 1;
+    $id = $_SESSION['user'];
     $db = Database::getDb();
-    $a = new Appointment();
-    $bookedApp = $a->getAppointmentById($id, $db);
+    $u = new User;
+    $currentUser = $u->findUserInfo($db, $id);
 
+if (isset($_POST['book'])) {
+
+    $doctor = $_POST['doctor'];
+    $patient = $_POST['patient'];
+    $day = $_POST['day'];
+    $time = $_POST['time'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $dbcon = Database::getDb();
+    $a = new Appointment();
+    $d = new Days();
+    $t = new Time_Slots();
+    $doc = new DoctorPDO();
+    $doct = $doc->getdoctorById($doctor , $dbcon);
+
+    $days = $d->getDaysById($db, $day);
+    $timeSlot = $t->getTimebyId($db, $time);
+    $appointment = $a->addAppointment($doctor, $patient, $day, $time, $subject, $message, $db);
+    if(!$appointment){
+        header("Location: index.php?page=bookAppointment");
+    }
+}
 ?>
 <head>
 
@@ -42,19 +72,19 @@ require_once 'database/Appointment.php';
                             <div class="confirmBox col-md-4 p-5">
                                 <p class="h3 text-capitalize">Appointment Details</p>
                                 <p class="h6 font-weight-bold">Day: <span
-                                        class="font-weight-light"><?= $bookedApp->date ?></span></p>
+                                        class="font-weight-light"><?= $days[0]->date?></span></p>
                                 <p class="h6 font-weight-bold">Time: <span
-                                        class="font-weight-light"><?= $bookedApp->time_slot ?></span></p>
-                                <p class="h6 font-weight-bold">Docter: <span
-                                        class="font-weight-light"><?= $bookedApp->first_name . " " . $bookedApp->last_name ?></span>
+                                        class="font-weight-light"><?= $timeSlot[0]->time_slot ?></span></p>
+                                <p class="h6 font-weight-bold">Doctor: <?=$doct->first_name . " ". $doct->last_name ?><span
+                                        class="font-weight-light"></span>
                                 </p>
                                 <p class="h6 font-weight-bold">Regarding: <span
-                                        class="font-weight-light"> <?= $bookedApp->subject ?> </span></p>
+                                        class="font-weight-light"> <?= $subject ?> </span></p>
                                 <p class="h6 font-weight-bold">Message for doctor: <span
-                                        class="font-weight-light"> <?= $bookedApp->message ?> </span></p>
+                                        class="font-weight-light"> <?= $message ?> </span></p>
                             </div>
                             <div class="col-md-7 py-5">
-                                <h2>Hello <?= $bookedApp->firstname . " " . $bookedApp->lastname ?></h2>
+                                <h2>Hello <?= $currentUser->firstname . " " .$currentUser->lastname ?></h2>
                                 <h3>Next Steps For Your Road To Recovery</h3>
                                 <p>Now that you have successfully booked an appointment, you will be contacted by one of
                                     our medical professionals to undergo a phone consultation followed by confirming
