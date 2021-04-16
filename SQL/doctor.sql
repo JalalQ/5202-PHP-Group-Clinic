@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2021 at 05:45 AM
+-- Generation Time: Apr 17, 2021 at 01:49 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -44,8 +44,9 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`id`, `first_name`, `last_name`, `cpso_reg`, `email`, `education`, `expertise`, `biography`, `personal`) VALUES
-(1, 'Johnathan ', 'Deo', 38499, 'johnathandeon@moltran.com', 'BSc (McMaster)', 'Injuries', 'Dr. Deo is the medical office specializing in delivering high-quality urgent care medicine. He’s a board-certified medical doctor, specializing in family practise. Dr. Deo was born in Nova Scotia and raised in British Columbia, CA. He graduated from McMaster University, and attended medical school at the University of California, Irvine.', 'Dr Deo is married with 2 kids, and live in Hamilton. Dr Deo enjoys gardening and hiking.'),
-(3, 'Jason', 'Kim', 38938, 'jason@geraldton.com', 'BSc (Waterloo)', 'Sport Injuries', 'Jason was born in Waterloo', 'He is married.');
+(1, 'Johnathan ', 'Deo', 38499, 'johnathandeon@moltran.com', 'BSc (McMaster), MSc (Toronto)', 'Injuries', 'Dr. Deo is the medical office specializing in delivering high-quality urgent care medicine. He’s a board-certified medical doctor, specializing in family practise. Dr. Deo was born in Nova Scotia and raised in British Columbia, CA. He graduated from McMaster University, and attended medical school at the University of California, Irvine.', 'Dr Deo is married with 2 kids, and live in Hamilton. Dr Deo enjoys gardening and hiking.'),
+(3, 'Jason', 'Kim', 38938, 'jason@geraldton.com', 'BSc (Waterloo)', 'Sport Injuries, Chiropractor', 'Dr Jason is an integrative health care practitioner who values patient centered, evidence based care that emphasizes whole body health. She strongly believes in working together with her patients to optimize their overall health and well-being, all of which is achieved through healthy communication.', 'In her spare time, Dr. Jason can be found enjoying time with her dog Ellie, camping, playing sports, or going on hikes.'),
+(4, 'Margaret ', 'Wilding', 78765, 'margaret@gmail.com', ' Bachelor of Science in Physical Therapy', 'Physiotherapist', 'Margaret is a Physiotherapist registered with The College of Physiotherapists of Ontario and a member of the Canadian Physiotherapy Association in good standing.', 'When not living through pandemics, she plays bass in a band and visits group homes with teenagers. She has recently discovered and recommends camping.');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +66,7 @@ ALTER TABLE `doctor`
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
