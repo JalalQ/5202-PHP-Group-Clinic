@@ -81,7 +81,7 @@ class AdminAllUsersPDO {
         return $patient;
     }
 
-    //Delete all users in user table
+    //Delete any users in user table
     public function deleteUser($dbcon, $id)
     {
         $query = "DELETE FROM users WHERE id = :id";

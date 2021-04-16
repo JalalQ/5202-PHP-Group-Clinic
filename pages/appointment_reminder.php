@@ -18,15 +18,15 @@ while($i < count($appos) ){
 
         // Create the Transport
         $transport = new \Swift_SmtpTransport('smtp.googlemail.com', 587,'tls');
-        $transport->setUsername('ikumine@gmail.com');
-        $transport->setPassword('Iikkmm0130@');
+        $transport->setUsername('');
+        $transport->setPassword('');
 
         // Create the Mailer using your created Transport
         $mailer = new \Swift_Mailer($transport);
 
         // Create a message
         $message = new \Swift_Message('QC/HC Appointment Reminder');
-        $message ->setFrom(['ikumine@gmail.com' => 'QC/HR']);
+        $message ->setFrom(['' => 'QC/HR']);
         $message ->setTo([$appos[$i]->email => $patientName]);
         $type = $message->getHeaders()->get('Content-Type');
         $type->setValue('text/html');

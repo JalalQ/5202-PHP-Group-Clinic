@@ -1,12 +1,15 @@
 <?php
+session_start();
 use WebApp2\Database\{Database, DoctorPDO, AdminAppointmentPDO, AdminHelpdeskPDO};
 require_once 'vendor/autoload.php';
 require_once 'functions/AdminDashboard.php';
 
 date_default_timezone_set('America/Toronto');
 
+
 //Get data from the data table
 $dbcon = Database::getDb();
+var_dump($_SESSION['user']->role);
 
 //Appointments data
 $newAppointments = new AdminAppointmentPDO();
@@ -40,15 +43,15 @@ if(isset($_POST['addReply'])){
 
             // Create the Transport
             $transport = new \Swift_SmtpTransport('smtp.googlemail.com', 587,'tls');
-            $transport->setUsername('ikumine@gmail.com');
-            $transport->setPassword('Iikkmm0130@');
+            $transport->setUsername('');
+            $transport->setPassword('');
 
             // Create the Mailer using your created Transport
             $mailer = new \Swift_Mailer($transport);
 
             // Create a message
             $message = new \Swift_Message('QC/HC Helpdesk');
-            $message->setFrom(['ikumine@gmail.com' => 'QC/HR']);
+            $message->setFrom(['' => 'QC/HR']);
             $message->setTo([$newInqs[0]->email => $username]);
             $type = $message->getHeaders()->get('Content-Type');
             $type->setValue('text/html');
@@ -91,7 +94,7 @@ if(isset($_POST['addReply'])){
             <button class="btn btn-secondary my-4" type="button" id="sidebar_nav_btn">Admin Menu</button>
 
             <!--3 COLUMNS-->
-            <h1 class="pb-4">Hi, user name</h1><!--User name will be retrieved from database-->
+            <h1 class="pb-4">Hi, <span><?= $_SESSION['user']->username; ?></span></h1><!--User name will be retrieved from database-->
             <div class="row container-fluid" id="card_col-3">
                 <div class="col-lg-4 mt-3"><!--APPOINTMENT NUMBER-->
                     <div class="card shadow-sm text-center" id="card_number">
