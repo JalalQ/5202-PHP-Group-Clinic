@@ -11,7 +11,7 @@ class User
         $newPassword = password_hash($password, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO users (firstname, lastname, username, password, email, user_role_id)
-                VALUES (:firstname, :lastname, :username, :password, :email, 2)";
+                VALUES (:firstname, :lastname, :username, :password, :email, 1)";
         $pst = $db->prepare($sql);
 
         $pst->bindParam(":firstname", $fname);
