@@ -47,6 +47,22 @@ class AdminAppointmentPDO {
         return $apps;
     }
 
+    //get all appointments on the specific date
+    public function getAllAppointmentsTomorrow($dbcon, $day) {
+        $query = "SELECT appointments.id, doctor.first_name, doctor.last_name, patients.firstname, patients.lastname, patients.email, days.date, time_slot.time_slot FROM appointments
+                    JOIN doctor ON appointments.doctor_id = doctor.id 
+                    JOIN patients ON appointments.patient_id = patients.id 
+                    JOIN days ON appointments.day_id = days.id 
+                    JOIN time_slot ON appointments.time_slot_id = time_slot.id 
+                   	WHERE days.date = :day";
+        $pdostm = $dbcon->prepare($query);
+        $pdostm->bindParam(':day', $day);
+        $pdostm->execute();
+
+        $apps = $pdostm->fetchAll(\PDO::FETCH_OBJ);
+        return $apps;
+    }
+
     //get all time slots
     public function getAllTimeslots($dbcon){
         $query = "SELECT * FROM time_slot";

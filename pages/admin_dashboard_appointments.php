@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION['user']->role !== "admin") {
+    header("location: index.php?page=user_login");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +21,7 @@
     <link rel="stylesheet" href="css/HeaderFooter.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/admin-style/admin_dashboard.css">
+    <link rel="stylesheet" href="css/admin-style/admin_sidebar.css">
 
 </head>
 
@@ -57,7 +64,7 @@
 <!--CUSTOM JS-->
 <script type="text/javascript" src="js/admin_appointments_calendar.js"></script>
 <!--CUSTOM JS-->
-<script type="text/javascript" src="js/admin_dashboard.js"></script>
+<script type="text/javascript" src="js/admin_sidebar.js"></script>
 
 <!-- End Script Source Files -->
 

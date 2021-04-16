@@ -1,7 +1,12 @@
 <?php
+session_start();
 use WebApp2\Database\{Database, AdminAppointmentPDO};
 require_once 'vendor/autoload.php';
 date_default_timezone_set('America/Toronto');
+
+if($_SESSION['user']->role !== "admin") {
+    header("location: index.php?page=user_login");
+}
 
 $dbcon = Database::getDb();
 $newAppointment = new AdminAppointmentPDO();
