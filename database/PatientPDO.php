@@ -55,13 +55,32 @@ class PatientPDO
         $pst->bindParam(':username', $username);
         if ($pst->execute()) {
             $results = $pst->fetch(\PDO::FETCH_OBJ);
-            if (password_verify($password, $results[0]->password)) {
+//            var_dump($results);
+            if (password_verify($password, $results->password)) {
 
                 return true;
 
             }
         }
         return false;
+    }
+
+    public function findUser($username, $password)
+    {
+        $sql = "SELECT * from users where username = :username";
+        $pst = $this->dbcon->prepare($sql);
+
+        $pst->bindParam(':username', $username);
+        if ($pst->execute()) {
+            $results = $pst->fetch(\PDO::FETCH_OBJ);
+//            var_dump($results);
+            if (password_verify($password, $results->password)) {
+
+                return $results;
+
+            }
+        }
+        return null;
     }
 
 }

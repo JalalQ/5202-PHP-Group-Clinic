@@ -111,6 +111,7 @@ include_once 'header.php';
 <div class="contact-content-wrapper container">
 
     <h1>Register to Book an Appointment</h1>
+    <p>Already have an account? Please <a class = "account"href="index.php?page=user_login"> login now.</a></p>
 
     <span class = "msg"><?= isset($sucessmsg)? $sucessmsg: ''; ?></span>
 

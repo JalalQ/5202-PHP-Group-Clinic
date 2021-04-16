@@ -13,6 +13,15 @@ class AdminHelpdeskPDO
         return $inquiries;
     }
 
+    public function addMessage($dbcon, $message, $status)
+    {
+        $query =  "INSERT INTO helpdesk (message, status) VALUES (:message, :status)";
+        $pdostm = $dbcon->prepare($query);
+        $pdostm->bindParam(':message', $message);
+        $pdostm->bindParam(':status', $status);
+        $inquiries = $pdostm->execute();
+        return $inquiries;
+    }
     //get only new inquiry
     public function getNewInquiries($dbcon)
     {

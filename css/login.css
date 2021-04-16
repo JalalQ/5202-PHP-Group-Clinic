@@ -13,6 +13,8 @@
     width: 30px; !important;
 
 }
+
+
 .form-signin {
     /*width: 100%;*/
     width: 25%;
@@ -43,3 +45,4 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+

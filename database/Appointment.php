@@ -45,4 +45,15 @@ class Appointment
         $count = $pst->execute();
         return $count;
     }
+
+    public function getPatientAppointment($db,$userid)
+    {
+        $sql = "SELECT days.date as date FROM days inner join appointments on days.id=appointments.day_id 
+where appointments.patient_id=:userid order by days.date asc";
+        $pst = $db->prepare($sql);
+
+        $pst->bindParam(":userid", $userid);
+        $count = $pst->execute();
+        return $pst->fetch(\PDO::FETCH_OBJ);
+    }
 }
