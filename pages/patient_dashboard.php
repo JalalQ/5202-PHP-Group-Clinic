@@ -1,3 +1,16 @@
+<?php
+session_start();
+use WebApp2\Database\{Database,Appointment};
+require_once 'vendor/autoload.php';
+
+$db = Database::getDb();
+$s = new Appointment();
+
+$AppointmentDate = $s->getPatientAppointment($db, $_SESSION["user"]->id);
+var_dump($AppointmentDate);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +40,8 @@ include_once 'header.php';
 
 
             <!--3 COLUMNS-->
-            <h1 class="py-4">Hi, Sasha</h1><!--User name will be retrieved from database-->
+            <h1 class
+                ="py-4">Hi, Sasha</h1><!--User name will be retrieved from database-->
             <div class="row container-fluid" id="card_col-3">
                 <div class="col-lg-4 mt-3"><!--APPOINTMENT DATE-->
                     <div class="card shadow-sm text-center" id="card_number">
@@ -37,16 +51,16 @@ include_once 'header.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mt-3"><!--Patient Info-->
-                    <div class="card shadow-sm text-center" id="card_patients">
-                        <a href="index.php?page=patient_info" class="nav-link">
-                            <span class="h2 card_item">My Info <i class="fas fa-hospital-user"></i></span>
-                        </a>
-                    </div>
-                </div>
+<!--                <div class="col-lg-4 mt-3"><!-Patient Info-->
+<!--                    <div class="card shadow-sm text-center" id="card_patients">-->
+<!--                        <a href="index.php?page=patient_info" class="nav-link">-->
+<!--                            <span class="h2 card_item">My Info <i class="fas fa-hospital-user"></i></span>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="col-lg-4 mt-3"><!--Book Appointment with Doctor-->
                     <div class="card shadow-sm text-center" id="card_doctors">
-                        <a href="#" class="nav-link">
+                        <a href="index.php?page=covid_questionnaire_start" class="nav-link">
                             <span class="h2 card_item">Book an Appointment <i class="fas fa-user-md"></i></span>
                         </a>
                     </div>
@@ -55,40 +69,40 @@ include_once 'header.php';
             <!--END OF 3 COLUMNS-->
 
             <!--APPOINTMENTS-->
-            <section class="card my-4 shadow-sm" id="section_appointment">
-                <h2 class="my-3 ml-3">Appointments</h2>
-<!--                <a href="#" class="nav-link mb-2 detail-links" >Check more</a>-->
-                <div class="container-fluid">
-                    <div class="calendar mb-3"><!--table will be generated using PHP-->
-                        <table class="table overflow-scroll">
-                            <thead>
-                            <tr>
-
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>Doctor Name</th>
-                                <th></th>
-<!--                                <th>Doctor4</th>-->
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>March 25th, 2021</td>
-                                <td>10:00 am</td>
-                                <td>John Smith</td>
-                                <td> <a href="#" class="nav-link mb-2 detail-links" >Cancel</a></td>
-                            </tr>
-                            <tr>
-                                <td>March 28th, 2021</td>
-                                <td>10:00 am</td>
-                                <td>Jane Smith</td>
-                                <td> <a href="#" class="nav-link mb-2 detail-links" >Cancel</a></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
+<!--            <section class="card my-4 shadow-sm" id="section_appointment">-->
+<!--                <h2 class="my-3 ml-3">Appointments</h2>-->
+<!--<!                <a href="#" class="nav-link mb-2 detail-links" >Check more</a>-->
+<!--                <div class="container-fluid">-->
+<!--                    <div class="calendar mb-3"><!-table will be generated using PHP-->
+<!--                        <table class="table overflow-scroll">-->
+<!--                            <thead>-->
+<!--                            <tr>-->
+<!---->
+<!--                                <th>Date</th>-->
+<!--                                <th>Time</th>-->
+<!--                                <th>Doctor Name</th>-->
+<!--                                <th></th>-->
+<!--                             <th>Doctor4</th>-->
+<!--                            </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody>-->
+<!--                            <tr>-->
+<!--                                <td>March 25th, 2021</td>-->
+<!--                                <td>10:00 am</td>-->
+<!--                                <td>John Smith</td>-->
+<!--                                <td> <a href="#" class="nav-link mb-2 detail-links" >Cancel</a></td>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td>March 28th, 2021</td>-->
+<!--                                <td>10:00 am</td>-->
+<!--                                <td>Jane Smith</td>-->
+<!--                                <td> <a href="#" class="nav-link mb-2 detail-links" >Cancel</a></td>-->
+<!--                            </tr>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
             <!--END OF APPOINTMENTS-->
 
             <!--HELPDESK-->

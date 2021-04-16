@@ -1,35 +1,24 @@
 <?php
-use WebApp2\Database\{Database,PatientPDO};
+session_start();
+use WebApp2\Database\{Database,User};
 require_once 'vendor/autoload.php';
-if(isset($_POST['register'])){
+if(isset($_POST['login'])){
 
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
+
     $username = $_POST['username'];
-    $email =  $_POST['email'];
     $password = $_POST['password'];
-    $user_role_id = $_POST['user_role_id'];
     $flag = "";
     $sucessmsg ="";
 
-    if(empty($firstname)) {
+    if(empty($username)) {
         $firsterr = " Please enter first name";
         $flag = true;
     }
-    if($email == ""){
-        $emailerr =  " please enter email";
-        $flag = true;
 
-    } else if (!filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)){
-        $emailerr =  " please enter valid email";
-        $flag = true;
-
-    }
 
     $pattern = "/[a-zA_Z0-9]{6,14}/";
     if(empty($password)){
         $passerr = " Please enter password";
-
         $flag = true;
 
     }
@@ -38,24 +27,39 @@ if(isset($_POST['register'])){
 
     if ($flag == false){
 
-
-
-//    var_dump($_POST);
         $db = Database::getDb();
-        $s = new PatientRegisterAddPDO();
-        $c = $s->addPatient($firstname, $lastname, $username, $password, $email, $user_role_id, $db);
+        $s = new User();
 
+        $result = $s->isUserExists($db, $username,$password);
+        if ($result){
+            $user = $s->findUser($db, $username, $password);
+            $userInfo = $s->findUserInfo($db,$user->id);
+            $_SESSION['user'] = $userInfo;
 
-        if ($c) {
-            $sucessmsg = "Thank you for registering. Please login to book an appointment";
-        } else {
-            $sucessmsg = "problem registering";
+            if ($userInfo->role=="patient"){
+                header("location: index.php?page=patient_dashboard");
+            }
+            ///add conditions for admin and doctor login here
+//
         }
+
+//
+
+
+        //if its true they login successfully
+        //create a session and header location
+
     }
 
 //    }
 //$sucessmsg = "Thank you for registering. Please loging to book an appointment";
 }
+
+//if ($_SESSION['status'] != "admin") {
+//
+//  header("Location: ./error.php");
+//
+//}
 
 ?>
 
@@ -90,11 +94,21 @@ include_once 'header.php';
 <main class="form-signin">
     <form action="" method="POST">
         <h1 class="h3 mb-3 fw-normal">QC/HC Login</h1>
+        <div>
         <label for="floatingInput">Email</label>
         <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username">
+        <span class = "errormsg"><?= isset($firsterr)? $firsterr: ''; ?></span>
+        </div>
+        <div>
+
         <label for="floatingPassword">Password</label>
         <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <input class="w-100 login btn btn-primary btn-sm" name="login" type="submit" value="Login">
+        <span class = "errormsg"><?= isset($passerr)? $passerr: ''; ?></span>
+        </div>
+        <div>
+            <input class="w-100 login btn btn-primary btn-sm" name="login" type="submit" value="Login">
+
+        </div>
     </form>
 </main>
 

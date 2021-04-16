@@ -13,7 +13,9 @@
     text-transform: capitalize;
     color: #276678;
 }
-
+.account{
+    text-decoration: underline; !important;
+}
 
 
 ul#contact-address li:first-child{
