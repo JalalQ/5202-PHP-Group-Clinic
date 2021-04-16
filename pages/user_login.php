@@ -15,15 +15,13 @@ if(isset($_POST['login'])){
         $flag = true;
     }
 
-
     $pattern = "/[a-zA_Z0-9]{6,14}/";
     if(empty($password)){
         $passerr = " Please enter password";
         $flag = true;
-
     }
 
-//if validation occures flag = true , if flag is still false insert intp ndatabase
+//if validation occurs flag = true , if flag is still false insert into database
 
     if ($flag == false){
 
@@ -31,6 +29,7 @@ if(isset($_POST['login'])){
         $s = new User();
 
         $result = $s->isUserExists($db, $username,$password);
+
         if ($result){
             $user = $s->findUser($db, $username, $password);
             $userInfo = $s->findUserInfo($db,$user->id);
@@ -38,8 +37,11 @@ if(isset($_POST['login'])){
 
             if ($userInfo->role=="patient"){
                 header("location: index.php?page=patient_dashboard");
-            }
             ///add conditions for admin and doctor login here
+            } else if ($userInfo->role == "admin") {
+                header("location: index.php?page=admin_dashboard");
+            }
+
 //
         }
 
@@ -95,7 +97,7 @@ include_once 'header.php';
     <form action="" method="POST">
         <h1 class="h3 mb-3 fw-normal">QC/HC Login</h1>
         <div>
-        <label for="floatingInput">Email</label>
+        <label for="floatingInput">Username</label>
         <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username">
         <span class = "errormsg"><?= isset($firsterr)? $firsterr: ''; ?></span>
         </div>

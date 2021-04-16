@@ -3,6 +3,7 @@ namespace WebApp2\Database;
 class AdminHelpdeskPDO
 {
     //get all inquiries
+    /*
     public function getInquiries($dbcon)
     {
         $query = "SELECT * FROM helpdesk";
@@ -12,16 +13,8 @@ class AdminHelpdeskPDO
         $inquiries = $pdostm->fetchAll(\PDO::FETCH_OBJ);
         return $inquiries;
     }
+    */
 
-    public function addMessage($dbcon, $message, $status)
-    {
-        $query =  "INSERT INTO helpdesk (message, status) VALUES (:message, :status)";
-        $pdostm = $dbcon->prepare($query);
-        $pdostm->bindParam(':message', $message);
-        $pdostm->bindParam(':status', $status);
-        $inquiries = $pdostm->execute();
-        return $inquiries;
-    }
     //get only new inquiry
     public function getNewInquiries($dbcon)
     {
@@ -42,18 +35,6 @@ class AdminHelpdeskPDO
 
         $questioner = $pdostm->fetchAll(\PDO::FETCH_OBJ);
         return $questioner;
-    }
-
-    //get questioner information by questioner ID
-    public function getQuestionerInfo($dbcon, $id)
-    {
-        $query = "SELECT helpdesk.id, helpdesk.questioner_id, helpdesk.reply_message, users.firstname, users.lastname, users.email FROM helpdesk, users WHERE helpdesk.questioner_id = users.id AND helpdesk.id = :id";
-        $pdostm = $dbcon->prepare($query);
-        $pdostm->bindParam(':id', $id);
-        $pdostm->execute();
-
-        $questionerInfo = $pdostm->fetchAll(\PDO::FETCH_OBJ);
-        return $questionerInfo;
     }
 
     //get all information base on responder ID
