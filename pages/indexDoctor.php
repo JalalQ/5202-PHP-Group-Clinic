@@ -1,13 +1,35 @@
 <?php
+//Page created by Jalaluddin Qureshi
+
 use WebApp2\Database\Database;
 use WebApp2\Database\DoctorPDO;
+use WebApp2\Database\ReviewsPDO;
 
 require_once 'vendor/autoload.php';
 
-
-
 $d = new DoctorPDO();
 $doctorsList = $d->getAllDoctors(Database::getDb());
+
+$r = new ReviewsPDO();
+
+//var_dump($review);
+
+//after any user submits feedback for the doctor.
+if(isset($_POST['confirmReview'])){
+
+    $doctorID = $_POST['id'];
+    $prof = $_POST['professional'];
+    $friendly = $_POST['friendly'];
+    $know = $_POST['know'];
+
+    $dbcon = Database::getDb();
+    $reviews = new ReviewsPDO();
+
+    $count = $reviews->insert($doctorID, $prof, $friendly, $know, $dbcon);
+
+    //As I have required="required" for all the inputs count will alway be equal to one,
+    //and there is no need to further evluate its value.
+}
 
 ?>
 

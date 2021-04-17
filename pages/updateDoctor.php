@@ -4,6 +4,9 @@ use WebApp2\Database\DoctorPDO;
 
 require_once 'vendor/autoload.php';
 
+if ($_SESSION['user'] !== "admin") {
+    header("Location: ./index.php?page=error");
+}
 
 //fetches the data of a particular student, and populated the placeholder on the form.
 if(isset($_POST['updateDoctor'])){

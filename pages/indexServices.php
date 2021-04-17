@@ -1,9 +1,9 @@
 <?php
 
+//Page created by Jalaluddin Qureshi
+
 use WebApp2\Database\{Database,PagePDO};
 require_once 'vendor/autoload.php';
-
-
 
 $PagePDO = new PagePDO();
 $servicesPage =$PagePDO->getPage('services');

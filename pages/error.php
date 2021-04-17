@@ -1,24 +1,10 @@
-<?php
-use WebApp2\Database\Database;
-use WebApp2\Database\DoctorPDO;
-
-require_once 'vendor/autoload.php';
-
-$d = new DoctorPDO();
-$id= $_POST['id'];
-
-$dr = $d->getdoctorById($id, Database::getDb());
-//var_dump($dr_by_id);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PHP Query Crew - Health Clinic</title>
+    <title>Error</title>
 
     <!-- Bootstrap 4.5 CSS -->
     <link rel="stylesheet" href="library/bootstrap/bootstrap.min.css">
@@ -30,38 +16,19 @@ $dr = $d->getdoctorById($id, Database::getDb());
 
 </head>
 
-<?php
+<?php include 'header.php'; ?>
 
-    include_once 'header.php';
-            
-?>
-
-
+<main role="main">
 <div class="wrapper">
-
     <div class="container">
-
-        <div class="m-1 row-cols-1 float-right" style="margin-bottom: 1em;">
-            <a href="index.php?page=doctorAdmin" id="btn_addStudent" class="btn btn-outline-success btn-lg ">Doctor Admin Panel</a>
-        </div>
-
-        <!-- doctor's information container -->
-        <div class="wrapper">
-
-            <?php include "doctorInformation.php"; ?>
-
-        </div>
-        <!-- end container -->
-
+        <h1 style="margin-top: 1em;">Error</h1>
+        <p>You are not authorized to access this page.</p>
+        <p>This page can only be accessed by an admin.</p>
     </div>
-    <!-- end wrapper -->
 </div>
+</main>
 
-<?php
 
-include 'footer.php';
-
-?>
 
 <!-- Script Source Files -->
 
