@@ -6,6 +6,6 @@ About Us - Completed by: Sasha Srinivas
 
 Admin interface - Completed by: Ikumi Mine
 
-Doctor's Services Review - Completed by: Jalaluddin Qureshi
+(i) Doctor's CRUD and Doctor Admin Panel, (ii) Services Pages (iii) User Review - Completed by: Jalaluddin Qureshi
 
 Contact Us - Completed by: Franck Cheuzem
