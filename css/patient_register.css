@@ -13,8 +13,9 @@
     text-transform: capitalize;
     color: #276678;
 }
-.account{
+#account{
     text-decoration: underline; !important;
+    color:black;!important;
 }
 
 

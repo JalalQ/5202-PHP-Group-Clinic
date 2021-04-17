@@ -27,6 +27,8 @@ header
     padding: 5px;
 }
 
+
+
 a {
     color: white;
 }
@@ -83,3 +85,4 @@ footer .svg-inline--fa {
 footer .svg-inline--fa:hover {
     color: aqua;
 }
+

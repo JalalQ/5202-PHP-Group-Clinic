@@ -38,6 +38,7 @@ class User
         $sql = "SELECT users.id as id, users.firstname as firstname, users.lastname as lastname, users.username as username, users.password as password, users.email as 
     email, user_roles.type as role FROM users inner join user_roles on users.user_role_id = user_roles.id where users.id = :id";
         $pst = $db->prepare($sql);
+        var_dump($id);
         $pst->bindParam(':id', $id);
         $count = $pst->execute();
         $result = $pst->fetch(\PDO::FETCH_OBJ);

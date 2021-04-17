@@ -16,9 +16,9 @@ require_once 'database/Appointment.php';
 require_once  'database/User.php';
 require_once 'database/DoctorPDO.php';
 
-    $id = $_SESSION['user'];
+    $id = $_SESSION['user']->id;
     $db = Database::getDb();
-    $u = new User;
+    $u = new User();
     $currentUser = $u->findUserInfo($db, $id);
 
 if (isset($_POST['book'])) {

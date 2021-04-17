@@ -64,4 +64,15 @@ class AdminHelpdeskPDO
         return $newReply;
 
     }
+
+    public function addMessage($id, $message, $status, $dbcon)
+    {
+        $query =  "INSERT INTO helpdesk (questioner_id, message, status) VALUES (:id, :message, :status)";
+        $pdostm = $dbcon->prepare($query);
+        $pdostm->bindParam(':id', $id);
+        $pdostm->bindParam(':message', $message);
+        $pdostm->bindParam(':status', $status);
+        $inquiries = $pdostm->execute();
+        return $inquiries;
+    }
 }

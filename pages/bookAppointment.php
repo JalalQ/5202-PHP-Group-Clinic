@@ -1,6 +1,6 @@
 <?php
 session_start();
-$id = $_SESSION['user'];
+$id = $_SESSION['user']->id;
 
 
 use WebApp2\Database\Database;
