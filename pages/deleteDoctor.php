@@ -4,7 +4,9 @@ use WebApp2\Database\DoctorPDO;
 
 require_once 'vendor/autoload.php';
 
-
+if ($_SESSION['status'] != "admin") {
+    header("Location: ./index.php?page=error");
+}
 
 if(isset($_POST['id'])){
     $id = $_POST['id'];

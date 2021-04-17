@@ -4,6 +4,10 @@ use WebApp2\Database\DoctorPDO;
 
 require_once 'vendor/autoload.php';
 
+if ($_SESSION['status'] != "admin") {
+    header("Location: ./index.php?page=error");
+}
+
 //once the data has been fetched. Update the content based on the new data provided by the user.
 if(isset($_POST['confirmAdd'])){
 
