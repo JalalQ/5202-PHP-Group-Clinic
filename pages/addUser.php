@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+ 
 
 use WebApp2\Database\{Database,User};
 

@@ -47,7 +47,7 @@ p#updated-date, p#version{
 	margin-left: 1em;
 	margin-right: 1em;
 	text-transform: capitalize;
-	width: 12em;
+	
 	border-radius: 5px;
 }
 form#form-symptoms label{

@@ -22,7 +22,7 @@ Tier 2
 
 5)  Add, Delete, Update User Appointments (Tier 2) - Braydon 
 
-6) Admin will see the appointments in the today and weekly calendar, admin can reply inquiries. (Tier 2) - Ikumi 
+6) Admin will see the appointments in the today and weekly calendar, admin can reply inquiries. (Tier 2) - Ikumi
 
 Tier 3
 
@@ -32,7 +32,6 @@ Tier 3
 
 3) An appointment reminder (Tier 3)- Ikumi
 
-4) Patient interface (Tier 3) - Sasha 
+4) Patient interface (Tier 3) - Sasha
 
 5) Contact us with google map API (Tier 3) - Franck
-

@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 $dirPages='pages/';//pages directory
 $pageExtension='.php';
 $forbidden_pages_array= array();
@@ -10,11 +11,11 @@ if(!isset($_GET['page'])){
 }
 else{
 	//if a page is requested check if that page is a valid page
-	$page = $_GET['page'];	
-	
+	$page = $_GET['page'];
+
 	if (preg_match('/^[a-z0-9_\-]+$/i', $page)){
-				
-		if (!in_array($page, $forbidden_pages_array)) {
+
+		if (!in_array($page, $forbidden_pages_array) && file_exists("pages/".$page.".php")) {
 
 			include_once $dirPages.$page.$pageExtension;
 		}
@@ -30,5 +31,3 @@ else{
 }
 // franck comment. Jalal comment.
 ?>
-			
-

@@ -8,6 +8,7 @@ Light blue: #a7c5eb
 /* GENERAL STYLE */
 body {
     color: #413c69;
+    font-size: 1.3rem;
 }
 h1 {
     margin: 0;
@@ -25,7 +26,7 @@ main {
     color: #a7c5eb;
 }
 /* TOGGLE MENU */
-.dropdown {
+/*.dropdown {
     display: none;
     top: 23%;
     right: 5%;
@@ -37,7 +38,7 @@ main {
 }
 #toggle-menu-item {
     right: 67px;
-}
+}*/
 /* TOGGLE CLASS */
 .show {
     display: block;

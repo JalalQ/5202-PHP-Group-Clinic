@@ -21,7 +21,7 @@ if(isset($_POST['register'])){
     }
 
     if(empty($lastname)) {
-        $firsterr = " Please enter last name";
+        $lasterr = " Please enter last name";
         $flag = true;
     }
 
@@ -111,6 +111,7 @@ include_once 'header.php';
 <div class="contact-content-wrapper container">
 
     <h1>Register to Book an Appointment</h1>
+    <p>Already have an account? Please <a id = "account"href="index.php?page=user_login"> login now.</a></p>
 
     <span class = "msg"><?= isset($sucessmsg)? $sucessmsg: ''; ?></span>
 
@@ -127,7 +128,7 @@ include_once 'header.php';
         <div class="form-group">
             <label for="lastname">last name<span>*</span></label>
             <input type="text" class="form-control" id="lastname" value="<?= isset($lastname) ? $lastname : ''; ?>" name="lastname">
-            <span class = "errormsg"><?= isset($firsterr)? $firsterr: ''; ?></span>
+            <span class = "errormsg"><?= isset($lasterr)? $lasterr: ''; ?></span>
 
         </div>
 
@@ -146,7 +147,7 @@ include_once 'header.php';
 
         <div class="form-group">
             <label for="email">Email<span>*</span></label>
-            <input type="email" class="form-control" id="email" name="email" value="<?= isset($email) ? $email : ''; ?>" placeholder="name@example.com" required>
+            <input type="email" class="form-control" id="email" name="email" value="<?= isset($email) ? $email : ''; ?>" placeholder="name@example.com">
             <span class = "errormsg" ><?= isset($emailerr)? $emailerr: ''; ?></span>
 
         </div>

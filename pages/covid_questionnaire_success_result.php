@@ -6,6 +6,9 @@
 
 	$covidPDO = new CovidResultPDO();
 	$covidResult =$covidPDO->getCovidResult('success');
+	$userfullname = "Patient";
+	if(isset($_SESSION['user']))
+		$userfullname = $_SESSION['user']->firstname . " ". $_SESSION['user']->lastname;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +52,7 @@
         	<div class="success-result-wrapper">
         		<p>
         			<strong>
-        			Dear Patient,
+        			Dear <?= $userfullname ?>,
         			</strong>
         		</p>
         		<?php
@@ -61,7 +64,7 @@
         	<div class="choices-wrapper">
 
 
-        		<a href="index.php?page=home" class="btn btn-secondary btn-lg">Quit</a>
+        		<a href="index.php?page=bookAppointment" class="btn btn-secondary btn-lg">Go back to book an appointment</a>
 
         	</div>
          </main>

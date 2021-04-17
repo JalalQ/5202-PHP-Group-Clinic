@@ -1,6 +1,6 @@
 <?php
-session_start();
-
+ 
+$id = $_SESSION['user']->id;
 
 
 use WebApp2\Database\Database;
@@ -9,12 +9,12 @@ use WebApp2\Database\Days;
 use WebApp2\Database\Time_Slots;
 use WebApp2\Database\Appointment;
 
-require_once 'Database/Database.php';
-require_once 'Database/User.php';
-require_once 'Database/DoctorPDO.php';
-require_once 'Database/Time_Slots.php';
-require_once 'Database/Days.php';
-require_once 'Database/Appointment.php';
+require_once 'database/Database.php';
+require_once 'database/User.php';
+require_once 'database/DoctorPDO.php';
+require_once 'database/Time_Slots.php';
+require_once 'database/Days.php';
+require_once 'database/Appointment.php';
 
 $d = new DoctorPDO();
 $doctors = $d->getAllDoctors(Database::getDb());
@@ -26,26 +26,6 @@ $times = $t->getTimeSlots(Database::getDb());
 
 require_once 'vendor/autoload.php';
 
-
-if (isset($_POST['book'])) {
-
-    $doctor = $_POST['doctor'];
-    $patient = $_POST['patient'];
-    $day = $_POST['day'];
-    $time = $_POST['time'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
-
-    $id = 1;
-
-    $db = Database::getDb();
-    $a = new Appointment();
-    $appointment = $a->addAppointment($doctor, $patient, $day, $time, $subject, $message, $db);
-
-    if($appointment){
-        header("Location: index.php?page=confirmAppointment");
-    }
-}
 
 ?>
 
@@ -77,7 +57,7 @@ if (isset($_POST['book'])) {
                         <p class="text-h3">Complete the following form to hear back from one of our medical professionals</p>
                     </div>
                 </div>
-                <form method="post" action="">
+                <form method="post" action="index.php?page=confirmAppointment">
                     <div class="form-group">
                         <label for="doctor">Doctor :</label>
                         <select  name="doctor" class="form-control" id="doctor" >
@@ -126,13 +106,14 @@ if (isset($_POST['book'])) {
                         <input type="text" name="message" id="message" class="form-control" placeholder="Message">
                     </div>
 
-                    <input type="hidden" name="patient" id="patient" value="1" >
+                    <input type="hidden" name="patient" id="patient" value="<?=$id?>" >
 
                     <div class="row justify-content-start mt-4">
                         <div class="col">
                             <button class="btn btn-primary mt-4" name="book">Book Now</button>
                         </div>
                     </div>
+
 
                 </form>
 
@@ -156,4 +137,3 @@ if (isset($_POST['book'])) {
 <script src="js/popper.min.js"></script>
 <!-- Font Awesome -->
 <script src="js/all.min.js"></script>
-

@@ -1,6 +1,11 @@
 <?php
+ 
 use WebApp2\Database\{Database,FaqPDO};
 require_once 'vendor/autoload.php';
+
+if($_SESSION['user']->role !== "admin") {
+    header("location: index.php?page=user_login");
+}
 
 $dbcon = Database::getDb();
 
@@ -44,6 +49,7 @@ if(isset($_POST['addFaq'])){
     <link rel="stylesheet" href="css/HeaderFooter.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="css/admin-style/admin_dashboard.css">
+    <link rel="stylesheet" href="css/admin-style/admin_sidebar.css">
 
 </head>
 
@@ -129,7 +135,7 @@ if(isset($_POST['addFaq'])){
 <!-- Font Awesome -->
 <script src="js/all.min.js"></script>
 <!--CUSTOM JS-->
-<script type="text/javascript" src="js/admin_dashboard.js"></script>
+<script type="text/javascript" src="js/admin_sidebar.js"></script>
 
 <!-- End Script Source Files -->
 

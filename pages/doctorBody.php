@@ -1,4 +1,6 @@
-
+<?php
+use WebApp2\Database\Database;
+?>
 <!--part of the code has been taken from
 https://www.bootdey.com/snippets/view/Social-network-profile-with-panels-->
 <main role="main">
@@ -22,6 +24,9 @@ https://www.bootdey.com/snippets/view/Social-network-profile-with-panels-->
             <div class="wrapper">
 
                 <?php foreach ($doctorsList as $dr) {
+                    //echo "*" . $dr->id;
+                    //get the aggregate review rating by a given doctor.
+                    $review = $r->getAvgs(Database::getDb(), $dr->id);
                     include "doctorInformation.php";
                 }
                 ?>

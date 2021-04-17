@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active sidebar_item" aria-current="page" href="#">
+                <a class="nav-link active sidebar_item" aria-current="page" href="index.php?page=admin_admins">
                     <div class="d-flex justify-content-start">
                         <i class="fas fa-user fa-fw mr-1 icons"></i>
                         <p>Administrators</p>
@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link sidebar_item" href="#">
+                <a class="nav-link sidebar_item" href="index.php?page=admin_patients">
                     <div class="d-flex justify-content-start">
                         <i class="fas fa-hospital-user fa-fw mr-1 icons"></i>
                         <p>Patients</p>
@@ -27,10 +27,18 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link sidebar_item" href="#">
+                <a class="nav-link sidebar_item" href="index.php?page=doctorAdmin">
                     <div class="d-flex justify-content-start">
                         <i class="fas fa-user-md fa-fw mr-1 icons"></i>
                         <p>Doctors</p>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active sidebar_item" aria-current="page" href="index.php?page=addUser">
+                    <div class="d-flex justify-content-start">
+                        <i class="fas fa-users fa-fw mr-1 icons"></i>
+                        <p>Users</p>
                     </div>
                 </a>
             </li>
