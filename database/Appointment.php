@@ -17,9 +17,9 @@ class Appointment
 
     public function getAppointmentById($id, $db){
         $sql = "SELECT doctor.first_name, doctor.last_name, days.date, patients.firstname, patients.lastname, time_slot.time_slot, appointments.subject, appointments.message
-                FROM appointments 
-                INNER JOIN doctor on doctor.id = appointments.doctor_id 
-                INNER JOIN days on days.id = appointments.day_id 
+                FROM appointments
+                INNER JOIN doctor on doctor.id = appointments.doctor_id
+                INNER JOIN days on days.id = appointments.day_id
                 INNER JOIN patients on patients.id = appointments.patient_id
                 INNER JOIN time_slot on time_slot.id = appointments.time_slot_id
                 WHERE appointments.id = :id";
@@ -45,4 +45,6 @@ class Appointment
         $count = $pst->execute();
         return $count;
     }
+
+    
 }
