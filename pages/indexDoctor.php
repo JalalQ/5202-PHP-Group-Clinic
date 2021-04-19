@@ -31,6 +31,8 @@ if(isset($_POST['confirmReview'])){
     //and there is no need to further evluate its value.
 }
 
+//echo $_SESSION['user']->role;
+
 ?>
 
 <!DOCTYPE html>

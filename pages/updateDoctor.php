@@ -4,7 +4,7 @@ use WebApp2\Database\DoctorPDO;
 
 require_once 'vendor/autoload.php';
 
-if ($_SESSION['user'] !== "admin") {
+if ($_SESSION['user']->role !== "admin") {
     header("Location: ./index.php?page=error");
 }
 
