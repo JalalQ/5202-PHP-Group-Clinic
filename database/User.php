@@ -6,20 +6,20 @@ namespace WebApp2\Database;
 class User
 {
 
-    public function addUser($fname, $lname, $username, $email, $password, $db) {
+    public function addUser($fname, $lname, $username, $email, $password, $role, $db) {
 
         $newPassword = password_hash($password, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO users (firstname, lastname, username, password, email, user_role_id)
-                VALUES (:firstname, :lastname, :username, :password, :email, 1)";
+                VALUES (:firstname, :lastname, :username, :password, :email, :role)";
         $pst = $db->prepare($sql);
 
         $pst->bindParam(":firstname", $fname);
         $pst->bindParam(":lastname", $lname);
         $pst->bindParam(":username", $username);
         $pst->bindParam(":password", $newPassword);
+        $pst->bindParam(":role", $role);
         $pst->bindParam(":email", $email);
-
         $count = $pst->execute();
         return $count;
     }
@@ -80,6 +80,14 @@ class User
             }
         }
         return null;
+    }
+
+    public function getUserRoles($dbcon) {
+        $sql = "SELECT * FROM user_roles";
+        $pdostm = $dbcon->prepare($sql);
+        $pdostm->execute();
+        $days = $pdostm->fetchAll(\PDO::FETCH_OBJ);
+        return $days;
     }
 
 }

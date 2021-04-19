@@ -6,18 +6,21 @@ use WebApp2\Database\{Database,User};
 
 require_once 'vendor/autoload.php';
 
-
+$r = new User();
+$db = Database::getDb();
+$roles = $r->getUserRoles($db);
 
 if (isset($_POST['submit'])) {
     $fname = $_POST['f_name'];
     $lname = $_POST['l_name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
+    $role = $_POST['role'];
     $password = $_POST['password'];
 
     $db = Database::getDb();
     $u = new User();
-    $user = $u->addUser($fname, $lname, $username, $email, $password, $db);
+    $user = $u->addUser($fname, $lname, $username, $email, $password, $role, $db);
 
     if (isset($user)) {
         header("Location: index.php?page=confirmAdd");
@@ -54,11 +57,24 @@ if (isset($_POST['submit'])) {
             <div class="col-12 col-md-8 col-lg-8 col-xl-6">
                 <div class="row">
                     <div class="col text-center">
-                        <h1>Add User</h1>
+                        <h1>Admin/User/Patient Registration</h1>
                         <p class="text-h3">Register with us today & let's start the road to recovery.</p>
                     </div>
                 </div>
                 <form name="addUser" method="post" action="">
+                    <div class="form-group">
+                        <label for="role">Role: </label>
+                        <select  name="role" class="form-control" id="role" >
+                            <?php foreach ($roles as $role) {
+                                $select = "";
+                                $selected = $select == $role->type? "selected" : "";?>
+                                <option <?=$selected?> value="<?=$role->id?>"> <?= $role->type?></option>
+
+                            <?php } ?>
+                        </select>
+                        <span style="color: #ff0000">
+                            </span>
+                    </div>
                     <div class="row align-items-center">
                         <div class="col mt-4">
                             <input type="text" name="f_name" id="f_name" class="form-control" placeholder="First name...">
@@ -88,6 +104,7 @@ if (isset($_POST['submit'])) {
                             <input type="password"  name="confirmPassword" class="form-control" placeholder="Confirm Password">
                         </div>
                     </div>
+
                     <div class="row justify-content-start mt-4">
                         <div class="col">
 
