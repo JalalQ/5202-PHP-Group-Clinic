@@ -1,5 +1,4 @@
 <?php
- 
 use WebApp2\Database\{Database, DoctorPDO, AdminAppointmentPDO, AdminHelpdeskPDO};
 use WebApp2\ObjectManagers\{MailManager, AdminMail};
 require_once 'vendor/autoload.php';
@@ -39,7 +38,8 @@ if(isset($_POST['addReply'])){
         if($newReply) {
             $username = $newInqs[0]->firstname . ' ' . $newInqs[0]->lastname;
 
-            //$mailManager = new MailManager();
+            //$mailer = new MailManager();
+            //var_dump($mailer);
             $transport = new \Swift_SmtpTransport('smtp.mail.yahoo.com', 587,'tls');
             $transport->setUsername('webbapp2@yahoo.com');
             $transport->setPassword('pjqncuhsekjhvkmq');
@@ -48,7 +48,7 @@ if(isset($_POST['addReply'])){
             $mailer = new \Swift_Mailer($transport);
 
             // Create a message
-            $reminder = new AdminMail();
+            $inquiry = new AdminMail();
             $message = new \Swift_Message('QC/HC Helpdesk');
             $message->setFrom(['webbapp2@yahoo.com' => 'QC/HR']);
             $message->setTo([$newInqs[0]->email => $username]);
@@ -57,7 +57,7 @@ if(isset($_POST['addReply'])){
             $type->setParameter('charset', 'utf-8');
 
             //generate the page content
-            $content = $reminder->content_inquiry($username, $reply);
+            $content = $inquiry->content_inquiry($username, $reply);
             $message->setBody($content);
 
             //echo $content;

@@ -47,7 +47,7 @@ class AdminAppointmentPDO {
         return $apps;
     }
 
-    //get all appointments on the specific date
+    //get all appointments on the specific date with doctor and patient table
     public function getAllAppointmentsTomorrow($dbcon, $day) {
         $query = "SELECT appointments.id, doctor.first_name, doctor.last_name, patients.firstname, patients.lastname, patients.email, days.date, time_slot.time_slot FROM appointments
                     JOIN doctor ON appointments.doctor_id = doctor.id 
@@ -62,6 +62,7 @@ class AdminAppointmentPDO {
         $apps = $pdostm->fetchAll(\PDO::FETCH_OBJ);
         return $apps;
     }
+
 
     //get all time slots
     public function getAllTimeslots($dbcon){

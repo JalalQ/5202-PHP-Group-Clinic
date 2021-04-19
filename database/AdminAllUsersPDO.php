@@ -7,7 +7,9 @@ class AdminAllUsersPDO {
     //get all patients
     public function getPatients($dbcon) {
 
-        $query = "SELECT * FROM users WHERE user_role_id = 1";
+        $query = "SELECT users.id, users.firstname, users.lastname, users.username, users.email  FROM users, user_roles 
+                    WHERE users.user_role_id = user_roles.id 
+                      AND user_roles.type = 'patient'";
         $pdostm = $dbcon->prepare($query);
         $pdostm->execute();
 
@@ -15,10 +17,26 @@ class AdminAllUsersPDO {
         return $patiens;
     }
 
-    //get a patient by id
-    public function getPatientById($dbcon, $id) {
+    /* ADMINS */
+    //get all admins
+    public function getAdmins($dbcon) {
 
-        $query = "SELECT * FROM users WHERE user_role_id = 1 AND id = :id";
+        $query = "SELECT users.id, users.firstname, users.lastname, users.username, users.email FROM users, user_roles 
+                    WHERE users.user_role_id = user_roles.id 
+                      AND user_roles.type = 'admin'";
+        $pdostm = $dbcon->prepare($query);
+        $pdostm->execute();
+
+        $admins = $pdostm->fetchAll(\PDO::FETCH_OBJ);
+        return $admins;
+    }
+
+    //get any user by ID
+    public function getUserById($dbcon, $id) {
+
+        $query = "SELECT * FROM users, user_roles 
+                    WHERE users.user_role_id = user_roles.id 
+                      AND users.id = :id";
         $pdostm = $dbcon->prepare($query);
         $pdostm->bindParam(':id', $id);
         $pdostm->execute();
@@ -27,43 +45,7 @@ class AdminAllUsersPDO {
         return $patient;
     }
 
-    /* USERS */
-    //get all users
-    public function getUsers($dbcon) {
-
-        $query = "SELECT * FROM users WHERE user_role_id = 4";
-        $pdostm = $dbcon->prepare($query);
-        $pdostm->execute();
-
-        $users = $pdostm->fetchAll(\PDO::FETCH_OBJ);
-        return $users;
-    }
-
-    /* ADMINS */
-    //get all admins
-    public function getAdmins($dbcon) {
-
-        $query = "SELECT * FROM users WHERE user_role_id = 2";
-        $pdostm = $dbcon->prepare($query);
-        $pdostm->execute();
-
-        $admins = $pdostm->fetchAll(\PDO::FETCH_OBJ);
-        return $admins;
-    }
-
-    //get an admin by id
-    public function getAdminById($dbcon, $id) {
-
-        $query = "SELECT * FROM users WHERE user_role_id = 2 AND id = :id";
-        $pdostm = $dbcon->prepare($query);
-        $pdostm->bindParam(':id', $id);
-        $pdostm->execute();
-
-        $admin = $pdostm->fetch(\PDO::FETCH_OBJ);
-        return $admin;
-    }
-
-    //Update all users in user table
+    //Update any users in user table
     public function updateUser($dbcon, $id, $fname, $lname, $username, $email, $role)
     {
         $query = "UPDATE users SET firstname = :fname, lastname = :lname, username = :username, email = :email, user_role_id = :role WHERE id = :id";

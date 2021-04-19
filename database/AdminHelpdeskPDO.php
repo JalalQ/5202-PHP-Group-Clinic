@@ -29,7 +29,8 @@ class AdminHelpdeskPDO
     //get all information based on questioner ID
     public function getAllInfoForQuestioner($dbcon)
     {
-        $query = "SELECT helpdesk.id, helpdesk.message, helpdesk.submitted_date, helpdesk.status, helpdesk.responder_id, users.firstname, users.lastname, users.email FROM helpdesk, users WHERE helpdesk.questioner_id = users.id";
+        $query = "SELECT helpdesk.id, helpdesk.message, helpdesk.submitted_date, helpdesk.status, helpdesk.responder_id, users.firstname, users.lastname, users.email FROM helpdesk, users 
+                    WHERE helpdesk.questioner_id = users.id";
         $pdostm = $dbcon->prepare($query);
         $pdostm->execute();
 
