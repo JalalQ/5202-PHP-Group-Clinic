@@ -149,26 +149,17 @@ if(isset($_POST['addReply'])){
                             <?php for($t = 0; $t < count($times); $t++) { ?>
                                 <tr>
                                 <td><?= $times[$t]['time_slot']; ?></td>
-
-                                <!-- Doctor 1-->
-                                <?php $doc1 = $newAppointments->getAppointmentsByDoctorTime($dbcon,1,date('Y-m-d'),$times[$t]['time_slot']);
-                                if(empty($doc1)) {
-                                    ?>
-                                    <td>&emsp;</td>
+                                <!-- Doctor-->
+                                <?php foreach($docs as $d){
+                                    $doc = $newAppointments->getAppointmentsByDoctorTime($dbcon, $d->id, date('Y-m-d'), $times[$t]['time_slot']);
+                                    if(empty($doc)) {
+                                        echo "<td>&emsp;</td>";
+                                ?>
                                 <?php } else { ?>
-                                    <td><?= $doc1[0]->time_slot." ".$doc1[0]->firstname." ".$doc1[0]->lastname ;; ?></td>
-                                <?php } ?>
-
-                                <!-- Doctor 2 -->
-                                <?php $doc2 = $newAppointments->getAppointmentsByDoctorTime($dbcon,2, date('Y-m-d'),$times[$t]['time_slot']);
-                                if(empty($doc2)) {
-                                    ?>
-                                    <td>&emsp;</td>
-                                <?php } else { ?>
-                                    <td><?= $doc2[0]->time_slot." ".$doc2[0]->firstname." ".$doc2[0]->lastname ;; ?></td>
-
-                                    </tr>
+                                     <td><?= $doc[0]->time_slot." ".$doc[0]->firstname." ".$doc[0]->lastname ;; ?></td>
                                 <?php }} ?>
+                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>

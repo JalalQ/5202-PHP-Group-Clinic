@@ -9,14 +9,12 @@ if($_SESSION['user']->role !== "admin") {
     header("location: index.php?page=user_login");
 }
 
+//Get tomorrow's appointment
 $dbcon = Database::getDb();
 $newAppointments = new AdminAppointmentPDO();
-$appos = $newAppointments->getAllAppointmentsInfo($dbcon);
-
-//Get tomorrow's appointment
 $nextday = date('Y-m-d', strtotime(' +1 day'));
 $apposTomorrow = $newAppointments->getAllAppointmentsTomorrow($dbcon, $nextday);
-//var_dump($apposTomorrow);
+var_dump($apposTomorrow);
 
 if($apposTomorrow) {
     foreach ($apposTomorrow as $a) {
@@ -31,6 +29,7 @@ if($apposTomorrow) {
         // Create the Mailer using your created Transport
         $mailer = new \Swift_Mailer($transport);
 
+        var_dump($a->email);
         // Create a message
         $message = new \Swift_Message('QC/HC Appointment Reminder');
         $message->setFrom(['webbapp2@yahoo.com' => 'QC/HR']);
@@ -41,7 +40,7 @@ if($apposTomorrow) {
         //generate the page content
         $content = content_reminder($patientName, $docName, $a->date, $a->time_slot);
         $message->setBody($content);
-        //echo $content;
+        echo $content;
         $result = $mailer->send($message);
     }
 }
