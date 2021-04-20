@@ -44,7 +44,6 @@ $aboutusPage=$PagePDO->getPage('About Us');
         ?>
 
 
-
 		<?php
 			include_once 'footer.php';
 	    ?>
