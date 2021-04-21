@@ -153,8 +153,8 @@ if(isset($_POST['addReply'])){
                                 <?php foreach($docs as $d){
                                     $doc = $newAppointments->getAppointmentsByDoctorTime($dbcon, $d->id, date('Y-m-d'), $times[$t]['time_slot']);
                                     if(empty($doc)) {
-                                        echo "<td>&emsp;</td>";
                                 ?>
+                                     <td>&emsp;</td>
                                 <?php } else { ?>
                                      <td><?= $doc[0]->time_slot." ".$doc[0]->firstname." ".$doc[0]->lastname ;; ?></td>
                                 <?php }} ?>

@@ -4,9 +4,9 @@ class AdminAppointmentPDO {
 
     //get all appointments information
     public function getAllAppointmentsInfo($dbcon){
-        $query = "SELECT appointments.id, doctor.first_name, doctor.last_name, patients.firstname, patients.lastname, patients.email, days.date, time_slot.time_slot FROM appointments, doctor, patients, time_slot, days 
+        $query = "SELECT appointments.id, doctor.first_name, doctor.last_name, users.firstname, users.lastname, users.email, days.date, time_slot.time_slot FROM appointments, doctor, users, time_slot, days 
                     WHERE appointments.doctor_id = doctor.id 
-                      AND appointments.patient_id = patients.id 
+                      AND appointments.patient_id = users.id 
                       AND appointments.day_id = days.id 
                       AND appointments.time_slot_id = time_slot.id ";
         $pdostm = $dbcon->prepare($query);
@@ -18,9 +18,9 @@ class AdminAppointmentPDO {
 
     //get appointments by doctor and time
     public function getAppointmentsByDoctorTime($dbcon, $doctorId, $date, $time){
-        $query = "SELECT appointments.id, patients.firstname, patients.lastname, days.date, time_slot.time_slot FROM appointments
+        $query = "SELECT appointments.id, users.firstname, users.lastname, days.date, time_slot.time_slot FROM appointments
                     JOIN doctor ON appointments.doctor_id = doctor.id 
-                    JOIN patients ON appointments.patient_id = patients.id 
+                    JOIN users ON appointments.patient_id = users.id 
                     JOIN days ON appointments.day_id = days.id 
                     JOIN time_slot ON appointments.time_slot_id = time_slot.id 
                     WHERE appointments.doctor_id = :doctor 
@@ -49,9 +49,9 @@ class AdminAppointmentPDO {
 
     //get all appointments on the specific date with doctor and patient table
     public function getAllAppointmentsTomorrow($dbcon, $day) {
-        $query = "SELECT appointments.id, doctor.first_name, doctor.last_name, patients.firstname, patients.lastname, patients.email, days.date, time_slot.time_slot FROM appointments
+        $query = "SELECT appointments.id, doctor.first_name, doctor.last_name, users.firstname, users.lastname, users.email, days.date, time_slot.time_slot FROM appointments
                     JOIN doctor ON appointments.doctor_id = doctor.id 
-                    JOIN patients ON appointments.patient_id = patients.id 
+                    JOIN users ON appointments.patient_id = users.id 
                     JOIN days ON appointments.day_id = days.id 
                     JOIN time_slot ON appointments.time_slot_id = time_slot.id 
                    	WHERE days.date = :day";
