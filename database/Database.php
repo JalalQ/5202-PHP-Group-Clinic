@@ -4,9 +4,9 @@ namespace WebApp2\Database;
 
 class Database {
 
-    private static $user = "root";
-    private static $pass = "root";
-    private static $dsn ="mysql:host=localhost;dbname=qc_health_clinic";
+  private static $user = "root";
+  private static $pass = "root";
+  private static $dsn ="mysql:host=localhost;dbname=qc_health_clinic";
     private static $dbcon;
 
     private function __construct() {
