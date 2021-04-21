@@ -1,5 +1,5 @@
 <?php
- 
+
 use WebApp2\Database\{Database,User};
 require_once 'vendor/autoload.php';
 if(isset($_POST['login'])){
@@ -11,7 +11,7 @@ if(isset($_POST['login'])){
     $sucessmsg ="";
 
     if(empty($username)) {
-        $firsterr = " Please enter first name";
+        $firsterr = " Please enter username";
         $flag = true;
     }
 
@@ -21,7 +21,7 @@ if(isset($_POST['login'])){
         $flag = true;
     }
 
-//if validation occurs flag = true , if flag is still false insert into database
+
 
     if ($flag == false){
 
@@ -42,26 +42,21 @@ if(isset($_POST['login'])){
                 header("location: index.php?page=admin_dashboard");
             }
 
+            }
+        if ($result==false) {
+            $passerr = "Incorrect username or password";
+        }
 //
         }
 
 //
 
 
-        //if its true they login successfully
-        //create a session and header location
+
 
     }
 
-//    }
-//$sucessmsg = "Thank you for registering. Please loging to book an appointment";
-}
 
-//if ($_SESSION['status'] != "admin") {
-//
-//  header("Location: ./error.php");
-//
-//}
 
 ?>
 
@@ -94,21 +89,21 @@ if(isset($_POST['login'])){
 include_once 'header.php';
 ?>
 <main class="form-signin">
-    <form action="" method="POST">
+    <form action="" method="POST" class="container" >
         <h1 class="h3 mb-3 fw-normal">QC/HC Login</h1>
-        <div>
+        <div class="form-group">
         <label for="floatingInput">Username</label>
         <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Username">
         <span class = "errormsg"><?= isset($firsterr)? $firsterr: ''; ?></span>
         </div>
-        <div>
+        <div class="form-group">
 
         <label for="floatingPassword">Password</label>
         <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
         <span class = "errormsg"><?= isset($passerr)? $passerr: ''; ?></span>
         </div>
-        <div>
-            <input class="w-100 login btn btn-primary btn-sm" name="login" type="submit" value="Login">
+        <div class="form-group">
+            <input class=" login btn btn-primary" name="login" type="submit" value="Login">
 
         </div>
     </form>

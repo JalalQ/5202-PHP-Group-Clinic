@@ -27,6 +27,12 @@ body {
 h1 {
     margin: 0;
 }
+.invitation-msg{
+  color: green;
+  font-size: 0.8em;
+  display: inline-block;
+  margin-left: 0.5em;
+}
 main {
     background-color: rgba(112,159,176,.1);
     overflow: hidden;

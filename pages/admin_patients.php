@@ -1,8 +1,10 @@
 <?php
- 
-use WebApp2\Database\{Database,PatientPDO,AdminAllUsersPDO};
-require_once 'vendor/autoload.php';
 
+use WebApp2\Database\{Database,PatientPDO,AdminAllUsersPDO,User};
+use WebApp2\ObjectManagers\MailManager;
+require_once 'vendor/autoload.php';
+$invitation_result = "";
+$id_array = array();
 if($_SESSION['user']->role !== "admin") {
     header("location: index.php?page=user_login");
 }
@@ -14,6 +16,18 @@ $newPatients = new AdminAllUsersPDO();
 $patients = $newPatients->getPatients($dbcon);
 //var_dump($patients);
 
+// this will send invitation to patient to review a doctor
+if (isset($_POST['review'])){
+  //registere the patient's id
+  if(!in_array($_POST['patient_id'], $id_array)){
+    array_push($id_array,$_POST['patient_id']);
+  }
+  $userpdo =new User();
+  $patient = $userpdo->findUserInfo($dbcon,$_POST['patient_id']) ; // grab the patient info
+  $mailManager = new MailManager();
+  $invitation_result = $mailManager->sendRequestReview($patient); // send the invitation
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,6 +71,7 @@ $patients = $newPatients->getPatients($dbcon);
                             <th scope="col">Email</th>
                             <th>&nbsp;</th>
                             <th>&nbsp;</th>
+                            <th>&nbsp;</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -78,6 +93,15 @@ $patients = $newPatients->getPatients($dbcon);
                                     <form action="index.php?page=admin_patient_delete" method="post">
                                         <input type="hidden" name="id" value="<?= $p->id; ?>"/>
                                         <input type="submit" class="button btn btn-primary" name="dltPatient" value="delete"/>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="patient_id" value="<?= $p->id; ?>"/>
+                                        <input type="submit" class="button btn btn-warning" name="review" value="review invitation"/>
+                                        <?php if (in_array($p->id,$id_array)): ?>
+                                          <span class="invitation-msg"><?= $invitation_result ?></span>
+                                        <?php endif; ?>
                                     </form>
                                 </td>
                             </tr>

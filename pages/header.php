@@ -7,7 +7,7 @@ if(isset($_SESSION["user"])){
       $dasboard = "patient_dashboard";
       break;
     case "doctor":
-      $dasboard = "doctor_dashboard";
+      $dasboard = "doctorAdmin";
       break;
     case "admin":
       $dasboard = "admin_dashboard";
@@ -35,7 +35,7 @@ if(isset($_SESSION["user"])){
                             <a class="nav-link <?php echo ($_GET['page']==='indexServices')? 'active' : '' ?>" href="index.php?page=indexServices"> Services </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link <?php echo ($_GET['page']==='indexDoctor')? 'active' : '' ?>" href="index.php?page=indexDoctor"> <i class="fas fa-user-md"></i> Doctor </a>
+                            <a class="nav-link <?php echo ($_GET['page']==='indexDoctor')? 'active' : '' ?>" href="index.php?page=indexDoctor"> <i class="fas fa-user-md"></i> Doctors </a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link <?php echo ($_GET['page']==='faq')? 'active' : '' ?>" href="index.php?page=faq">FAQ </a>

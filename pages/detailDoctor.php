@@ -1,6 +1,7 @@
 <?php
 use WebApp2\Database\Database;
 use WebApp2\Database\DoctorPDO;
+use WebApp2\Database\ReviewsPDO;
 
 require_once 'vendor/autoload.php';
 
@@ -8,6 +9,9 @@ $d = new DoctorPDO();
 $id= $_POST['id'];
 
 $dr = $d->getdoctorById($id, Database::getDb());
+
+$r = new ReviewsPDO();
+$review = $r->getAvgs(Database::getDb(), $id);
 //var_dump($dr_by_id);
 
 ?>
