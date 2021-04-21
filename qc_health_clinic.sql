@@ -362,6 +362,7 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `password`, `ema
 (36, 'ikumi', 'Mine', 'patient', 'ccc', 'n01442368@humbermail.ca', 1),
 (37, 'John', 'Doe', 'John', '123', 'john@test.com', 1),
 (38, 'franck', 'yves', 'mopao', '$2y$10$c8xMh1MZlE2C2iY6lq2m5O7XnWeD3Hdo0744PokgkcRTY1lIScK7.', 'franck@yahoo.fr', 1);
+(39, 'Jalal', 'Qureshi', 'jalal', '$2y$07$BCryptRequires22Chrcte/VlQH0piJtjXl.0t1XkA8pw9dMXTpOq', 'jalal@gmail.com', 3);
 
 -- --------------------------------------------------------
 
