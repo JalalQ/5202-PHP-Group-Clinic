@@ -52,8 +52,10 @@ class User
         $pst = $db->prepare($sql);
 
         $pst->bindParam(':username', $username);
-        if ($pst->execute()) {
-            $results = $pst->fetch(\PDO::FETCH_OBJ);
+        $pst->execute();
+        $results = $pst->fetch(\PDO::FETCH_OBJ);
+        if ($results) {
+
 //            var_dump($results);
             if (password_verify($password, $results->password)) {
 
