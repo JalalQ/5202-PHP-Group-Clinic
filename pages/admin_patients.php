@@ -57,6 +57,7 @@ $patients = $newPatients->getPatients($dbcon);
                             <th scope="col">Email</th>
                             <th>&nbsp;</th>
                             <th>&nbsp;</th>
+                            <th>&nbsp;</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -78,6 +79,12 @@ $patients = $newPatients->getPatients($dbcon);
                                     <form action="index.php?page=admin_patient_delete" method="post">
                                         <input type="hidden" name="id" value="<?= $p->id; ?>"/>
                                         <input type="submit" class="button btn btn-primary" name="dltPatient" value="delete"/>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="#" method="post">
+                                        <input type="hidden" name="id" value="<?= $p->id; ?>"/>
+                                        <input type="submit" class="button btn btn-warning" name="review" value="review invitation"/>
                                     </form>
                                 </td>
                             </tr>

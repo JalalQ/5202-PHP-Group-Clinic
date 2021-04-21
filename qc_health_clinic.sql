@@ -215,7 +215,7 @@ CREATE TABLE `helpdesk` (
   `id` int(11) NOT NULL,
   `questioner_id` int(11) NOT NULL,
   `message` varchar(2000) NOT NULL,
-  `submitted_date` datetime NOT NULL,
+  `submitted_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` varchar(50) NOT NULL,
   `responder_id` int(11) DEFAULT NULL,
   `responded_date` datetime DEFAULT NULL,

@@ -66,6 +66,12 @@ if(isset($_POST['register'])){
 
     if ($c) {
         $sucessmsg = "Thank you for registering. Please login to book an appointment";
+        $firstname = "";
+        $lastname = "";
+        $username = "";
+        $password = "";
+        $email = "";
+
 
     } else {
         $sucessmsg = "problem registering";

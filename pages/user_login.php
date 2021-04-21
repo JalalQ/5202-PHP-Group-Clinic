@@ -11,7 +11,7 @@ if(isset($_POST['login'])){
     $sucessmsg ="";
 
     if(empty($username)) {
-        $firsterr = " Please enter first name";
+        $firsterr = " Please enter username";
         $flag = true;
     }
 
@@ -21,7 +21,7 @@ if(isset($_POST['login'])){
         $flag = true;
     }
 
-//if validation occurs flag = true , if flag is still false insert into database
+
 
     if ($flag == false){
 
@@ -42,26 +42,21 @@ if(isset($_POST['login'])){
                 header("location: index.php?page=admin_dashboard");
             }
 
+            }
+        if ($result==false) {
+            $passerr = "Incorrect username or password";
+        }
 //
         }
 
 //
 
 
-        //if its true they login successfully
-        //create a session and header location
+
 
     }
 
-//    }
-//$sucessmsg = "Thank you for registering. Please loging to book an appointment";
-}
 
-//if ($_SESSION['status'] != "admin") {
-//
-//  header("Location: ./error.php");
-//
-//}
 
 ?>
 

@@ -16,7 +16,7 @@ $fname = $lname = $address = $phone = $email = "";
 //Get patient data
 if(isset($_POST['updAdmin'])){
     $id = $_POST['id'];
-    $a = $newAdmin->getAdminById($dbcon, $id);
+    $a = $newAdmin->getUserById($dbcon, $id);
 
     $fname =  $a->firstname;
     $lname = $a->lastname;
