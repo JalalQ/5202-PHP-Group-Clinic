@@ -1,5 +1,26 @@
 # Web-App-2
 
+## Introduction
+A team project (5 members), in which we designed and developed website for a health clinic. Each group member had different features to work and implement.
+
+## Jalal's contribution.
+I worked on the doctor, doctor's review and list of services pages.
+- [x] For the doctor's page, a user to the website could see the details of all the doctors serving at the clinic, and the reviews associated with each of the doctor. A logged in admin could perform CRUD/ CMS on the doctor's profile. 
+- [x] A visitor to the clinic website could submit reviews
+
+## Jalal's features screenshot
+
+![dr-admin](https://user-images.githubusercontent.com/58306478/119060041-6f1c5b00-b99f-11eb-8819-c7115e825d40.png)
+
+![update-dr](https://user-images.githubusercontent.com/58306478/119060223-c4f10300-b99f-11eb-8b1f-ac2453a31153.png)
+
+![dr-profiles](https://user-images.githubusercontent.com/58306478/119060282-e18d3b00-b99f-11eb-9c76-5aabe5171d76.png)
+
+![review](https://user-images.githubusercontent.com/58306478/119060323-f7026500-b99f-11eb-8495-d14026b76395.png)
+
+![services](https://user-images.githubusercontent.com/58306478/119060366-0aadcb80-b9a0-11eb-97aa-056646873f35.png)
+
+## Team member's role.
 Tier 1:
 
 1) FAQs (Tier 1) - Ikumi
